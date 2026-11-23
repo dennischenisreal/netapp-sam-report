@@ -1,5 +1,22 @@
 # SAM Report maintenance rules
 
+## 中文维护要点与本轮授权
+
+- 每次先读需求、决策、路线图并检查 Git 和部署状态；原私有维护区 `project/src` 仍是唯一业务修改源。
+- 本轮用户明确批准中文优先管理文档、安全审核及精确提交/推送；此授权取代下方旧的“仅本地文档、不提交”限制，但不包含业务修改、生产同步、tag/Release 或维护源交接。
+- 保留六模块、完整来源 25 页、14 项检查和原有阈值；未知不是零，Check13 严格超过 120 天，Convert 仅建议。
+- 开发分支、业务修改、合并 main、部署与发布按独立授权执行；不得 force push、改写历史或删除未提交工作。
+- 提交前检查准确文件清单、实际暂存内容及敏感信息；不使用全量 git add，不上传任何真实客户数据。
+- 修改后测试并记 CHANGELOG，失败不得发布。日常报告不改源码、不提交、不上传。发布必须可追溯、可回滚。
+- 下面英文规则作为详细约束保留；本轮中文授权仅取代其中过时的管理文档提交边界。
+
+## Current authority and Git facts (2026-11-23)
+
+- The first main commit 54c9acad9752ced4aeb99e3548099bec6455a5be has been pushed to the private repository. No stable tag, Release, CI policy or production deployment follows from that fact.
+- The private maintenance workspace's project/src remains the sole business editing source. This repository's src is a sanitized version boundary; installed Skills are runtime copies. Resolve private locations from the local record, never guessed paths. Do not independently edit both trees.
+- Current approval covers local governance documents, the source-role map and necessary package inventory refresh/validation only. No additional commit, branch, push, CI, branch protection, synchronization or source handover is implied. See docs/maintenance-boundary.md.
+- Keep the initial commit's 38 portable tests and 188 synthetic assertions separate from fresh working-tree/package checks.
+
 1. Start by inspecting the directory, Git status, branch, tags, staged/unstaged changes, remotes and deployment drift. Use GIT_OPTIONAL_LOCKS=0 for read-only Git checks; do not print credentials.
 2. Read README.md, docs/requirements.md, docs/project-context.md, docs/decisions.md and docs/roadmap.md before development. Distinguish verified facts, confirmed requirements, historical evidence and unverified conclusions.
 3. Preserve the six modules, complete-source 25 sheets, fourteen checks, thresholds, units, full cluster/SVM/volume identity and output contracts. Unknown is not zero. Snapshot age is strictly greater than 120 days; Convert is advice, never an actual conversion.

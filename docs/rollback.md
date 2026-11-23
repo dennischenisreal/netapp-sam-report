@@ -1,6 +1,6 @@
 # Rollback
 
-There is no approved Git tag or deployed candidate to roll back yet. Do not invent a target commit. Preserve the original private workspace, production Skills, configuration, locks and backups.
+The traceable initial source commit is 54c9acad9752ced4aeb99e3548099bec6455a5be. There is still no approved stable tag or production deployment from this repository. A known source commit is not an authorized production rollback target; preserve the private workspace, production Skills, configuration, locks and backups.
 
 For a future authorized rollback: identify the exact known-good commit/tag and fingerprints, inspect uncommitted changes, back up source/configuration and runtime state, then present the restore and validation plan for approval. Prefer an isolated checkout for verification; no destructive reset/clean or history rewrite by default. A repository revert does not automatically deploy production.
 
