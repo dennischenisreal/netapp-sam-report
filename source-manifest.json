@@ -1,0 +1,422 @@
+{
+  "schema_version": 1,
+  "version": "0.5.0",
+  "files": [
+    {
+      "source": "src/1-netapp-controller-eos-ma/SKILL.md",
+      "target": {
+        "root": "1-netapp-controller-eos-ma",
+        "relative_path": "SKILL.md"
+      },
+      "sha256": "65aad9df58cd3f0b376110b067a9bc98bf07ea9657bcd3be333787e0367b201d"
+    },
+    {
+      "source": "src/2-netapp-capacity-aggr-vol-fg/config.py",
+      "target": {
+        "root": "2-netapp-capacity-aggr-vol-fg",
+        "relative_path": "config.py"
+      },
+      "sha256": "f7dbfa78c4a5463aa8728dd9822c54c5a585b24ed09ecc68615dca097cc22c98"
+    },
+    {
+      "source": "src/2-netapp-capacity-aggr-vol-fg/exporters/__init__.py",
+      "target": {
+        "root": "2-netapp-capacity-aggr-vol-fg",
+        "relative_path": "exporters/__init__.py"
+      },
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "src/2-netapp-capacity-aggr-vol-fg/exporters/excel.py",
+      "target": {
+        "root": "2-netapp-capacity-aggr-vol-fg",
+        "relative_path": "exporters/excel.py"
+      },
+      "sha256": "8ffbd86a0d08b9b57c61b4c3544dedb5194c3cd1b5311f62978ae1acaa0e9970"
+    },
+    {
+      "source": "src/2-netapp-capacity-aggr-vol-fg/params.json",
+      "target": {
+        "root": "2-netapp-capacity-aggr-vol-fg",
+        "relative_path": "params.json"
+      },
+      "sha256": "442a4ddd4fc40f6d3553902a925cc68e8b3b99150c3f25654caa35bf8981a579"
+    },
+    {
+      "source": "src/2-netapp-capacity-aggr-vol-fg/parsers/__init__.py",
+      "target": {
+        "root": "2-netapp-capacity-aggr-vol-fg",
+        "relative_path": "parsers/__init__.py"
+      },
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "src/2-netapp-capacity-aggr-vol-fg/parsers/aggr.py",
+      "target": {
+        "root": "2-netapp-capacity-aggr-vol-fg",
+        "relative_path": "parsers/aggr.py"
+      },
+      "sha256": "51c5e32cc32d407d7fb94b7ff50bf1570fc4790bb686d42bf5ee0cf5a2f61052"
+    },
+    {
+      "source": "src/2-netapp-capacity-aggr-vol-fg/parsers/archive.py",
+      "target": {
+        "root": "2-netapp-capacity-aggr-vol-fg",
+        "relative_path": "parsers/archive.py"
+      },
+      "sha256": "188a59a53e44156831216e811f76427a85765aa34cac2002e9aafc828c6c8521"
+    },
+    {
+      "source": "src/2-netapp-capacity-aggr-vol-fg/parsers/bucket.py",
+      "target": {
+        "root": "2-netapp-capacity-aggr-vol-fg",
+        "relative_path": "parsers/bucket.py"
+      },
+      "sha256": "3824adc2f4b5552ded0bfac45553d4946a725c23e5768d8efa84adff6f0b782e"
+    },
+    {
+      "source": "src/2-netapp-capacity-aggr-vol-fg/parsers/dedupe.py",
+      "target": {
+        "root": "2-netapp-capacity-aggr-vol-fg",
+        "relative_path": "parsers/dedupe.py"
+      },
+      "sha256": "2400b045fa4fca131e3f95403c4ff02442d21626fff5f3f3f43e979597990050"
+    },
+    {
+      "source": "src/2-netapp-capacity-aggr-vol-fg/parsers/df.py",
+      "target": {
+        "root": "2-netapp-capacity-aggr-vol-fg",
+        "relative_path": "parsers/df.py"
+      },
+      "sha256": "73ede8d2fabd39251407b3424e9ef2bee3a75f4b00a4099653656cb8e038de30"
+    },
+    {
+      "source": "src/2-netapp-capacity-aggr-vol-fg/parsers/export_policy.py",
+      "target": {
+        "root": "2-netapp-capacity-aggr-vol-fg",
+        "relative_path": "parsers/export_policy.py"
+      },
+      "sha256": "93b8dc539c8c5e2a0a11c5d84b31c7cdfc04e927b93c0ed8fd357e9814462d8f"
+    },
+    {
+      "source": "src/2-netapp-capacity-aggr-vol-fg/parsers/identity.py",
+      "target": {
+        "root": "2-netapp-capacity-aggr-vol-fg",
+        "relative_path": "parsers/identity.py"
+      },
+      "sha256": "7daa9bdef53353a114ee5cb3241b7560d25f45a20da57f7989e8bd4b3d3032aa"
+    },
+    {
+      "source": "src/2-netapp-capacity-aggr-vol-fg/parsers/sysconfig.py",
+      "target": {
+        "root": "2-netapp-capacity-aggr-vol-fg",
+        "relative_path": "parsers/sysconfig.py"
+      },
+      "sha256": "82431ceed85e15d9f51772adfe72409bd6a3345157ed05c6dbc6f218d82f5f64"
+    },
+    {
+      "source": "src/2-netapp-capacity-aggr-vol-fg/parsers/tiering.py",
+      "target": {
+        "root": "2-netapp-capacity-aggr-vol-fg",
+        "relative_path": "parsers/tiering.py"
+      },
+      "sha256": "67d1a5cc47f44274a095a75fe7aead339feb67cf0900393a17f7e68dd2124503"
+    },
+    {
+      "source": "src/2-netapp-capacity-aggr-vol-fg/parsers/volstatus_f.py",
+      "target": {
+        "root": "2-netapp-capacity-aggr-vol-fg",
+        "relative_path": "parsers/volstatus_f.py"
+      },
+      "sha256": "e3879204974b1a0aeed0243dc242eebdbca69254820889c84a145e9454c924e2"
+    },
+    {
+      "source": "src/2-netapp-capacity-aggr-vol-fg/parsers/volume.py",
+      "target": {
+        "root": "2-netapp-capacity-aggr-vol-fg",
+        "relative_path": "parsers/volume.py"
+      },
+      "sha256": "abd4a53be4a77f39f63fd61e12ad78c9dca47fde98b2e39bbc4dcd47b42738b3"
+    },
+    {
+      "source": "src/2-netapp-capacity-aggr-vol-fg/run.py",
+      "target": {
+        "root": "2-netapp-capacity-aggr-vol-fg",
+        "relative_path": "run.py"
+      },
+      "sha256": "37a6b4dc87dfd0f91ea92491372b3838fed5b5610e58d69d02a8fb2d560cfac6"
+    },
+    {
+      "source": "src/2-netapp-capacity-aggr-vol-fg/SKILL.md",
+      "target": {
+        "root": "2-netapp-capacity-aggr-vol-fg",
+        "relative_path": "SKILL.md"
+      },
+      "sha256": "86ac5f1033c2c455d44fc639c19b0ee803b67d335fc215f2fb6a7e84ddebe205"
+    },
+    {
+      "source": "src/3-jv-case/SKILL.md",
+      "target": {
+        "root": "3-jv-case",
+        "relative_path": "SKILL.md"
+      },
+      "sha256": "05f826a4bb34c9b474858b4ee52914c1cc3673dccb681e714c62b815379071ed"
+    },
+    {
+      "source": "src/4-netapp-firmware-shelf-io-sp/install.bat",
+      "target": {
+        "root": "4-netapp-firmware-shelf-io-sp",
+        "relative_path": "install.bat"
+      },
+      "sha256": "664f71f31a394334d31743e6fa7c4bbbc314be7a24fb192ea61c00568df13dce"
+    },
+    {
+      "source": "src/4-netapp-firmware-shelf-io-sp/main.py",
+      "target": {
+        "root": "4-netapp-firmware-shelf-io-sp",
+        "relative_path": "main.py"
+      },
+      "sha256": "c09bab1b30f3aea21e65c73d789e7d86a423558bdcf5c056a280ff8b5bc4edd2"
+    },
+    {
+      "source": "src/4-netapp-firmware-shelf-io-sp/requirements.txt",
+      "target": {
+        "root": "4-netapp-firmware-shelf-io-sp",
+        "relative_path": "requirements.txt"
+      },
+      "sha256": "6cd70328bb5d5bd78b49036b52061ef9cf8b28301b15c97dbb7484e30536a011"
+    },
+    {
+      "source": "src/4-netapp-firmware-shelf-io-sp/SKILL.md",
+      "target": {
+        "root": "4-netapp-firmware-shelf-io-sp",
+        "relative_path": "SKILL.md"
+      },
+      "sha256": "546879d7604ffd63f718b4bd2a68ba8954eb0f3417790d3a7c24460689753b04"
+    },
+    {
+      "source": "src/5-netapp-network-ems/parse_network_final.py",
+      "target": {
+        "root": "5-netapp-network-ems",
+        "relative_path": "parse_network_final.py"
+      },
+      "sha256": "b8d63fe475311bfe571d032f4410a02330b6fac801585d6f2dd593e30429cf2c"
+    },
+    {
+      "source": "src/5-netapp-network-ems/SKILL.md",
+      "target": {
+        "root": "5-netapp-network-ems",
+        "relative_path": "SKILL.md"
+      },
+      "sha256": "29a2826ad544a36b7bfde1ffd2197a8fcd2279bb0fe32ae1bc6e7cc1854bee04"
+    },
+    {
+      "source": "src/6-best-practice-check/check_audit.py",
+      "target": {
+        "root": "6-best-practice-check",
+        "relative_path": "check_audit.py"
+      },
+      "sha256": "5caa04b4c2407d8fec520e349fd6d9e102e0dbc61c5d567d194c32da6355150f"
+    },
+    {
+      "source": "src/6-best-practice-check/convert_check.py",
+      "target": {
+        "root": "6-best-practice-check",
+        "relative_path": "convert_check.py"
+      },
+      "sha256": "f466faa6dcda55fe8bb16898ece3bacce7f5965112d6e3b10ae798af9e40ff28"
+    },
+    {
+      "source": "src/6-best-practice-check/requirements.txt",
+      "target": {
+        "root": "6-best-practice-check",
+        "relative_path": "requirements.txt"
+      },
+      "sha256": "60a598e7096eeda3f6ffa0b580a51913dbb799c85b1beb2403d814d3e932195a"
+    },
+    {
+      "source": "src/6-best-practice-check/run.py",
+      "target": {
+        "root": "6-best-practice-check",
+        "relative_path": "run.py"
+      },
+      "sha256": "a02223eec675506fe799efef6f2f4d76d181dea3f19f94db7e40aa4ebdc6410a"
+    },
+    {
+      "source": "src/6-best-practice-check/SKILL.md",
+      "target": {
+        "root": "6-best-practice-check",
+        "relative_path": "SKILL.md"
+      },
+      "sha256": "e6d3a7e8bd6189a486080d6eb9407c50a7f875594b78c7322510e6360297b0a0"
+    },
+    {
+      "source": "src/legacy-case/parse_c1_case.py",
+      "target": {
+        "root": "legacy-case",
+        "relative_path": "parse_c1_case.py"
+      },
+      "sha256": "53ff149a40dd884516662ec267317173000f6bb97b98062492e9cd7f22aa0993"
+    },
+    {
+      "source": "src/legacy-controller-firmware/generate_all_final.py",
+      "target": {
+        "root": "legacy-controller-firmware",
+        "relative_path": "generate_all_final.py"
+      },
+      "sha256": "20b6b4cfaa9659414349cff2eb2d53f383026f7248e5491e66422ebd21fd5dbe"
+    },
+    {
+      "source": "src/legacy-controller-firmware/parse_asup_logs_final.py",
+      "target": {
+        "root": "legacy-controller-firmware",
+        "relative_path": "parse_asup_logs_final.py"
+      },
+      "sha256": "74a7d15a847584e0bbc8feb3d798e2133c38f5780db5bc8e3dcd1b702e045f1f"
+    },
+    {
+      "source": "src/NetApp Capacity Trend and Case Report/generate_capacity_report.py",
+      "target": {
+        "root": "NetApp Capacity Trend and Case Report",
+        "relative_path": "generate_capacity_report.py"
+      },
+      "sha256": "3f043a18a072b80b85b7ce3ba0fb305591c9de9660ee976d10a3d6e1011c10d6"
+    },
+    {
+      "source": "src/NetApp Capacity Trend and Case Report/generate_case_report.py",
+      "target": {
+        "root": "NetApp Capacity Trend and Case Report",
+        "relative_path": "generate_case_report.py"
+      },
+      "sha256": "9ace3363f08a01c75c7813d663460dd35327504d25a4f74e2152253b5f9cf69e"
+    },
+    {
+      "source": "src/NetApp Capacity Trend and Case Report/generate_cluster_volume_trend.py",
+      "target": {
+        "root": "NetApp Capacity Trend and Case Report",
+        "relative_path": "generate_cluster_volume_trend.py"
+      },
+      "sha256": "fc762c5f88a4471c53d2d113c637ac6307677d33fbf373f121bd65cd7f13dba3"
+    },
+    {
+      "source": "src/NetApp Capacity Trend and Case Report/generate_device_report.py",
+      "target": {
+        "root": "NetApp Capacity Trend and Case Report",
+        "relative_path": "generate_device_report.py"
+      },
+      "sha256": "5bd78e56c1c046065f6f7f79e7ada2f8aaececa129761f77f579bf6afa942750"
+    },
+    {
+      "source": "src/NetApp Capacity Trend and Case Report/generate_subset_report.py",
+      "target": {
+        "root": "NetApp Capacity Trend and Case Report",
+        "relative_path": "generate_subset_report.py"
+      },
+      "sha256": "9bf6687eb91adfe4a5f212e26d4dd68439c632ff2e246d7a65100f8db3e2f65c"
+    },
+    {
+      "source": "src/NetApp Capacity Trend and Case Report/main.py",
+      "target": {
+        "root": "NetApp Capacity Trend and Case Report",
+        "relative_path": "main.py"
+      },
+      "sha256": "afdd36a0460987bcd86ab59e1231a8990d9c44e5f45cda2c941fe5dce1840502"
+    },
+    {
+      "source": "src/NetApp Capacity Trend and Case Report/report_dates.py",
+      "target": {
+        "root": "NetApp Capacity Trend and Case Report",
+        "relative_path": "report_dates.py"
+      },
+      "sha256": "279541d2fa2056a9643540e73fcb26f93737d562dff3ff1478b762c04a36ad57"
+    },
+    {
+      "source": "src/NetApp Capacity Trend and Case Report/SKILL.md",
+      "target": {
+        "root": "NetApp Capacity Trend and Case Report",
+        "relative_path": "SKILL.md"
+      },
+      "sha256": "b901f1544a519f175100435252e7bb18ecbdda2c74f8d75fe190f77d43d29e02"
+    },
+    {
+      "source": "src/NetApp Capacity Trend and Case Report/trend_model.py",
+      "target": {
+        "root": "NetApp Capacity Trend and Case Report",
+        "relative_path": "trend_model.py"
+      },
+      "sha256": "ef717c960871e3d1beec7cd38c9926c51487efec2801d0b164e37255d4d895d1"
+    },
+    {
+      "source": "src/NetApp-SAM-Report/customer_profiles.py",
+      "target": {
+        "root": "NetApp-SAM-Report",
+        "relative_path": "customer_profiles.py"
+      },
+      "sha256": "a79e6d08299a38932454f9a0703ae33d38cd7ad9bd1e5c6e2585bb0b9e9075f7"
+    },
+    {
+      "source": "src/NetApp-SAM-Report/install.bat",
+      "target": {
+        "root": "NetApp-SAM-Report",
+        "relative_path": "install.bat"
+      },
+      "sha256": "39242adabdb1325365895d59be5878ab93d6a844a9c2a559b291ab1a9b8d10cb"
+    },
+    {
+      "source": "src/NetApp-SAM-Report/requirements.txt",
+      "target": {
+        "root": "NetApp-SAM-Report",
+        "relative_path": "requirements.txt"
+      },
+      "sha256": "416ba9b533421ce18e5ec3d38df06e1e83014bdc249adaa3c01610823b57582c"
+    },
+    {
+      "source": "src/NetApp-SAM-Report/run.py",
+      "target": {
+        "root": "NetApp-SAM-Report",
+        "relative_path": "run.py"
+      },
+      "sha256": "be2ed9c27bf36f82ac01b20173e6cce7dafff8bc9a53556817b84e100b3755e3"
+    },
+    {
+      "source": "src/NetApp-SAM-Report/sam_coverage.py",
+      "target": {
+        "root": "NetApp-SAM-Report",
+        "relative_path": "sam_coverage.py"
+      },
+      "sha256": "50c6d7132155ec4355547e4d65d24f6e81f66a7cab6d067aafd0e8b467aff30c"
+    },
+    {
+      "source": "src/NetApp-SAM-Report/sam_package_compat.py",
+      "target": {
+        "root": "NetApp-SAM-Report",
+        "relative_path": "sam_package_compat.py"
+      },
+      "sha256": "2d2bef01164cbaf82a0eed220c92e2e33fd06311793a5911e2865342132d89b9"
+    },
+    {
+      "source": "src/NetApp-SAM-Report/sam_runtime.py",
+      "target": {
+        "root": "NetApp-SAM-Report",
+        "relative_path": "sam_runtime.py"
+      },
+      "sha256": "4147e19e1b22c09cced90614ef8fbd63159435e564c686377af2c01a99b7aa4d"
+    },
+    {
+      "source": "src/NetApp-SAM-Report/sam_settings.py",
+      "target": {
+        "root": "NetApp-SAM-Report",
+        "relative_path": "sam_settings.py"
+      },
+      "sha256": "994a4564d67199b649fbd20bbf15a81580e6d53d2083cb03ca4f2513d93b4309"
+    },
+    {
+      "source": "src/NetApp-SAM-Report/SKILL.md",
+      "target": {
+        "root": "NetApp-SAM-Report",
+        "relative_path": "SKILL.md"
+      },
+      "sha256": "402b235438e4309b27d5fd7716712d0fefbcff1109cf28b4d8085d7b542c7069"
+    }
+  ]
+}

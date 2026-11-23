@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "version": "0.5.0",
+  "skills_root": "{project}/.local/runtime/skills",
+  "legacy_root": "{project}/.local/runtime/legacy",
+  "knowledge_root": "{project}/.local/data/knowledge",
+  "logs_root": "{project}/.local/data/asup",
+  "reports_root": "{project}/.local/reports",
+  "trend_output_root": "{project}/.local/trends",
+  "history_roots": [
+    "{project}/.local/data/history"
+  ],
+  "contracts": {
+    "sam_children": 6,
+    "final_sheets": 25,
+    "best_practice_checks": 14,
+    "old_snapshot_days_strictly_greater_than": 120,
+    "convert": {
+      "size_tb": 30,
+      "usage_percent": 50,
+      "growth_percent": 25,
+      "window_months": [
+        5,
+        7
+      ],
+      "minimum_samples": 4,
+      "maximum_gap_months": 3
+    }
+  },
+  "legacy_compat": {
+    "default_sites": [
+      "demo-site"
+    ],
+    "firmware_naming": []
+  }
+}

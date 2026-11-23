@@ -1,0 +1,201 @@
+{
+    "_comment": "NetApp Capacity Check 可调参数配置文件 - 按客户需求修改此文件即可",
+    "thresholds": {
+        "top_aggregate_root_percent": {
+            "value": 95,
+            "desc": "TOP aggregate: root/aggr0 使用率筛选阈值",
+            "unit": "%",
+            "type": "integer",
+            "min": 0,
+            "max": 100,
+            "options": [
+                {
+                    "label": "95%",
+                    "value": 95,
+                    "desc": "保持默认值"
+                },
+                {
+                    "label": "90%",
+                    "value": 90,
+                    "desc": "降低阈值"
+                },
+                {
+                    "label": "98%",
+                    "value": 98,
+                    "desc": "提高阈值"
+                }
+            ]
+        },
+        "top_aggregate_other_percent": {
+            "value": 85,
+            "desc": "TOP aggregate: 其他聚合使用率筛选阈值",
+            "unit": "%",
+            "type": "integer",
+            "min": 0,
+            "max": 100,
+            "options": [
+                {
+                    "label": "85%",
+                    "value": 85,
+                    "desc": "保持默认值"
+                },
+                {
+                    "label": "80%",
+                    "value": 80,
+                    "desc": "降低阈值"
+                },
+                {
+                    "label": "90%",
+                    "value": 90,
+                    "desc": "提高阈值"
+                }
+            ]
+        },
+        "top_inode_count": {
+            "value": 200000000,
+            "desc": "TOP inode: inode使用量筛选阈值",
+            "unit": "亿",
+            "type": "integer",
+            "min": 0,
+            "max": 1000000000,
+            "display_factor": 1e-08,
+            "options": [
+                {
+                    "label": "2亿",
+                    "value": 200000000,
+                    "desc": "保持默认值"
+                },
+                {
+                    "label": "1亿",
+                    "value": 100000000,
+                    "desc": "降低阈值"
+                },
+                {
+                    "label": "3亿",
+                    "value": 300000000,
+                    "desc": "提高阈值"
+                }
+            ]
+        },
+        "top_inode_percent": {
+            "value": 70,
+            "desc": "TOP inode: inode使用率筛选阈值",
+            "unit": "%",
+            "type": "integer",
+            "min": 0,
+            "max": 100,
+            "options": [
+                {
+                    "label": "70%",
+                    "value": 70,
+                    "desc": "保持默认值"
+                },
+                {
+                    "label": "60%",
+                    "value": 60,
+                    "desc": "降低阈值"
+                },
+                {
+                    "label": "80%",
+                    "value": 80,
+                    "desc": "提高阈值"
+                }
+            ]
+        },
+        "top_volume_size_tb": {
+            "value": 5,
+            "desc": "TOP volume: 已用容量筛选阈值",
+            "unit": "TB",
+            "type": "integer",
+            "min": 0,
+            "max": 1000,
+            "options": [
+                {
+                    "label": "5 TB",
+                    "value": 5,
+                    "desc": "保持默认值"
+                },
+                {
+                    "label": "3 TB",
+                    "value": 3,
+                    "desc": "降低阈值"
+                },
+                {
+                    "label": "10 TB",
+                    "value": 10,
+                    "desc": "提高阈值"
+                }
+            ]
+        },
+        "top_volume_percent": {
+            "value": 80,
+            "desc": "TOP volume: 使用率筛选阈值",
+            "unit": "%",
+            "type": "integer",
+            "min": 0,
+            "max": 100,
+            "options": [
+                {
+                    "label": "80%",
+                    "value": 80,
+                    "desc": "保持默认值"
+                },
+                {
+                    "label": "70%",
+                    "value": 70,
+                    "desc": "降低阈值"
+                },
+                {
+                    "label": "90%",
+                    "value": 90,
+                    "desc": "提高阈值"
+                }
+            ]
+        }
+    },
+    "highlights": {
+        "capacity_used_percent": {
+            "value": 85,
+            "desc": "Capacity表: Used Percent 超过此值标黄(%)"
+        },
+        "top_aggregate_capacity_percent": {
+            "value": 90,
+            "desc": "TOP aggregate表: capacity% 超过此值标黄(%)"
+        },
+        "flexgroup_iused_percent": {
+            "value": 60,
+            "desc": "FlexGroup表: %iused 超过此值标黄(%)"
+        },
+        "flexgroup_capacity_percent": {
+            "value": 80,
+            "desc": "FlexGroup表: Capacity% 超过此值标黄(%)"
+        },
+        "volume_list_used_percent": {
+            "value": 80,
+            "desc": "Volume List表: Used Percentage 超过此值标黄(%)"
+        },
+        "volume_list_logical_used_percent": {
+            "value": 95,
+            "desc": "Volume List表: Logical Used Percent 超过此值标黄(%)"
+        },
+        "bucket_used_percent": {
+            "value": 80,
+            "desc": "Bucket表: bucket used percent 超过此值标黄(%)"
+        }
+    },
+    "volume_filter": {
+        "skip_prefixes": [
+            "MDV",
+            "MDV_crs",
+            "fg_oss",
+            "fg_oss_"
+        ],
+        "skip_suffixes": [
+            "_root"
+        ],
+        "skip_names": [
+            "vol0"
+        ],
+        "skip_comment": "skip_prefixes/skip_suffixes: 卷名此前缀开头或此后缀结尾则过滤; skip_names: 完整卷名精确匹配则过滤(vol0为系统根卷, vol00xx_* 客户数据卷不可按前缀过滤)"
+    }
+}

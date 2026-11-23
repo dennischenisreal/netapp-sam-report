@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "naming": {
+    "sam": {
+      "basename_aliases": {"demo-special": "Demo Special"},
+      "rules": [{"any": [{"token": "demo-special", "transform": "lower"}], "name": "Demo Special"}],
+      "fallback": "sam_parent"
+    },
+    "best_practice": {
+      "basename_aliases": {},
+      "rules": [{"any": [{"token": "demo-special", "transform": "lower"}], "name": "Demo Special"}],
+      "fallback": "basename_strip"
+    }
+  },
+  "best_practice": {
+    "special_customer_match": [{"token": "demo special", "transform": "lower"}],
+    "check14_clusters": ["demo-cluster-01"],
+    "messages": {
+      "title_check4": "Check 4: Logical Space (configured scope)",
+      "title_check9": "Check 9: Space Thresholds (configured scope)",
+      "title_check14": "Check 14: Snapshot Policy (configured scope)",
+      "log_check9": "Check 9: evaluating configured scope",
+      "log_check14_skip": "Check 14: outside configured customer scope",
+      "log_check14_start": "Check 14: evaluating configured clusters"
+    }
+  }
+}
