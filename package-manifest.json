@@ -13,13 +13,13 @@
     },
     {
       "path": "AGENTS.md",
-      "sha256": "75e90c762bb144ba1ef7496e98344f3aa43a87e9b2253207a6b508be2f523a0c",
-      "bytes": 5080
+      "sha256": "ffe341bbc158b8ecb58ed26fed16071c150794a5af810b50f17f6328293d9077",
+      "bytes": 5424
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "e86a966dfe3da6c456d6008511c62b4434b2a9b71f4f7dbcd529bc36cd0b5fcc",
-      "bytes": 2103
+      "sha256": "9c3fd3e106d72ffd25805a430a272d349be90043b0c7ed788ac3e113605b222f",
+      "bytes": 2356
     },
     {
       "path": "config/customer-profiles.example.json",
@@ -43,8 +43,8 @@
     },
     {
       "path": "docs/decisions.md",
-      "sha256": "71bcb24ed10d1fa933dddac1a456fa864cac31d9904d823bb2c8d47f4ad7c393",
-      "bytes": 2029
+      "sha256": "22bd4c6e11b7830b48b1178f8e6c2392c264912810c15f734f25aa071f79d00d",
+      "bytes": 2543
     },
     {
       "path": "docs/maintenance-boundary.md",
@@ -73,8 +73,8 @@
     },
     {
       "path": "docs/roadmap.md",
-      "sha256": "c58d4b9feef9b1a4b131765e4a38a5c9b7310c75fc9c6eac3d30e371c81549c3",
-      "bytes": 2247
+      "sha256": "ce8260d91681125286d7377f1a0a68a809bf55cfb5a9d0a6ee040eb43a7954db",
+      "bytes": 2839
     },
     {
       "path": "docs/rollback.md",
@@ -83,8 +83,8 @@
     },
     {
       "path": "docs/security.md",
-      "sha256": "6abec87b3d259a9f39cb7a802feb5cc5458756a56e064283dc8e3553c44b9f8c",
-      "bytes": 1579
+      "sha256": "1a3b20dfc4660561a986844e9cdcf795272b793001f7e85093629456b98e1d68",
+      "bytes": 1844
     },
     {
       "path": "packaging/templates/isolation_guard.py",
@@ -93,8 +93,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "d28447808a9531b00d39409d58b1dffebd6e4c2753fce5af23844de583d3d09c",
-      "bytes": 6144
+      "sha256": "262a789cadacd8881db83eab3ffa4f8480ae140375b70b8c9e28f1c88514d4b1",
+      "bytes": 8247
     },
     {
       "path": "requirements.in",
@@ -458,13 +458,23 @@
     },
     {
       "path": "docs/skill-distribution-validation.md",
-      "sha256": "1df1f70125c21d2a2f2ba684050eb36e952600f9338897f10f291205613cde85",
-      "bytes": 2943
+      "sha256": "ef790629d2981341f4149ec1c350f2f5883e7c64dd9310eed3b88fe758692a99",
+      "bytes": 3014
     },
     {
       "path": "docs/知识库输入约定.md",
       "sha256": "108f46e01acce8905c598d67313a5d159c8f4530b135dc73eb6ba348bbc6c7af",
       "bytes": 2480
+    },
+    {
+      "path": "examples/SAM报告样板.md",
+      "sha256": "894d55294fb2cca9c385747a9102f2d25ecf07a8e43472b1a634c327629a4d55",
+      "bytes": 4063
+    },
+    {
+      "path": "docs/report-catalog.md",
+      "sha256": "64e8d8d565eef39647798e6b179f8360a8e67dee7346708bacb7bd81daa960f9",
+      "bytes": 2806
     }
   ]
 }

@@ -6,6 +6,6 @@ Review an exact file inventory: canonical relative names, text encoding, size, s
 
 Before an approved commit, stage only explicitly reviewed paths and inspect the actual staged diff. Never git add . or git add -A. Scan explicitly selected branch/tag history before a push. Existing private checkpoint objects must not be copied, cleaned, rewritten, mirrored or included in an upload. Ignore rules neither sanitize tracked files nor remove history.
 
-Use safe interactive authentication only after connection approval. Never request passwords/Tokens in chat, embed them in remote URLs or print them. Verify the remote is private and inspect nonempty remote history before changing it. All remote mutations require explicit approval.
+Use safe interactive authentication only after connection approval. Never request passwords/Tokens in chat, embed them in remote URLs or print them. Verify remote visibility matches the owner's explicit approval and inspect nonempty remote history before changing it. All remote mutations require explicit approval. Public exposure requires reviewing all reachable refs and nested distributions as well as repository discussions, comments, releases and Actions artifacts/logs when present. Never assume a clean current tree sanitizes its history.
 
 Local packages must exactly match reviewed fingerprints and exclude .local and .git. Store detailed scan findings and provenance privately; share only sanitized conclusions. Re-review any byte changes before committing or distributing.

@@ -1,6 +1,37 @@
-# NetApp SAM Report — 离线存储巡检报告 Skill
+# NetApp Report Skills — 存储巡检、性能与趋势分析
 
 把 NetApp ONTAP AutoSupport（ASUP）日志转成直观的 Excel SAM 报告，方便存储管理员检查容量、配置、固件、告警和最佳实践。无需连接生产存储；本项目不执行存储配置变更，也不会实际转换 FlexGroup。
+
+本仓库将逐步汇集 **SAM Report、PA Report、Trend Report**。当前优先交付 SAM；PA 和 Trend 按各自的数据源、安装包与验证结果逐项接入，不影响现有 SAM 使用方式。仓库地址暂保留 `netapp-sam-report`，不因展示名称调整而移动目录或改变入口。
+
+## 报告与 Skill 导航
+
+| 报告 | 主要用途 | 输入 | 当前状态 |
+|---|---|---|---|
+| **SAM Report** | 配置巡检、容量、固件、Case、网络事件和最佳实践 | 离线 ASUP 日志及本地知识库 | 已提供可下载的分发候选包 |
+| **PA Report** | 性能分析报告，具体指标以未来接入版本为准 | Performance Archive | 计划接入，本仓库尚未提供 PA 安装包 |
+| **Trend Report** | 多月份容量、Inode、Case 与设备变化趋势 | 历史 SAM 报告 | 已保留趋势源码，独立分发包和接入验收待完善 |
+
+详细规划见 [多报告接入规范](docs/report-catalog.md)。以下功能和安装说明专指当前 SAM 包，不代表 PA、Trend 已包含在该安装入口中。
+
+## 报告效果预览
+
+以下为**人工构造的虚构样板**，用于说明表格字段，不是客户数据、真实报告截图或本次运行结果。实际 Excel 包含更多字段与工作表。
+
+**Volume List · 容量与配置**
+
+| Cluster Name | Volume Name | SVM名字 | Volume Size (TB) | Available Size (TB) | Used Size (TB) | Used Percentage |
+|:---:|:---:|:---:|---:|---:|---:|---:|
+| DEMO-CLUSTER | DEMO-DATA | DEMO-SVM | 60.00 | 12.00 | 48.00 | 80.00% |
+| DEMO-CLUSTER | DEMO-ARCHIVE | DEMO-SVM | 100.00 | 65.00 | 35.00 | 35.00% |
+
+**最佳实践 · 老旧快照提醒**
+
+| Cluster Name | SVM名字 | Volume Name | Snapshot Name | Snapshot Size | Creation Time |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| DEMO-CLUSTER | DEMO-SVM | DEMO-DATA | DEMO-SNAPSHOT | 256 GiB | 2026-06-01 00:00:00 |
+
+以 2026-11-24 为固定样板评估日期，该快照严格超过 120 天；这里只展示提醒，不执行清理。[查看更多模块样板与字段解释 →](examples/SAM报告样板.md)
 
 ## 能生成什么？
 
@@ -29,13 +60,11 @@
 
 仓库还保留趋势分析 Skill、共享运行依赖及旧适配器。**不能只复制主 Skill 目录就认为全部依赖已经安装。**
 
-## 给朋友同事使用：当前能做什么？
-
-仓库为 **Private**：同事需要仓库读取权限才能下载或克隆；使用相同邮箱不等于自动获得访问权限。不要通过改成 Public 来绕过权限管理。
+## 下载与安装
 
 现已提供可导入的 **Skill 分发候选包**，支持 Codex、WorkBuddy、TRAE 的明确目录安装；不是只下载主 Skill 文件夹。维护者已有的生产 Skill 部署继续独立使用，未因本次 GitHub 接入改变。
 
-### 下载、安装和使用
+### 安装步骤
 
 1. 在本仓库打开 `distribution/netapp-sam-report-portable.zip`，点击下载原始文件；同时下载该目录的 `SHA256SUMS.txt`，核验哈希。GitHub 的“Download ZIP”下载的是整个源码仓库，不能代替这个 Skill 安装包。
 2. 阅读 [Skill 中文安装与使用指南](docs/Skill中文安装与使用指南.md)。Codex / TRAE 解压后使用明确目录安装器；WorkBuddy 可按指南上传原始 Skill ZIP。
@@ -66,10 +95,13 @@ python -B tools/validate_synthetic_report.py --archive .local/demo-package/netap
 - 项目基于 `0.5.0`，首次 main 提交为 `54c9acad9752ced4aeb99e3548099bec6455a5be`，不是稳定 tag 或 Release。
 - 首次提交的干净本地检出通过 38 项测试及四场景 188 项合成断言；本轮文档变更需另记验证证据。
 - 尚未配置 CI/分支保护；全部 Sheet 的像素/打印验收和新机器安装仍待完成，部分长表头可能截断。
-- 不上传真实 ASUP、报告、知识库、客户身份、网络信息、凭据或私有配置，即使仓库是 Private。
+- 仓库公开不等于输入数据公开：真实 ASUP、报告、知识库、客户身份、网络信息、凭据和私有配置必须保留在使用者本地，禁止提交。
 - 原私有维护工作区的 `project/src` 仍是唯一业务修改源；当前 Git 源码是脱敏版本边界，生产副本不是第二开发源。
 
 ## 中文导航
+
+- [SAM 报告样板](examples/SAM报告样板.md)：纯虚构数据，查看各模块典型字段。
+- [多报告接入规范](docs/report-catalog.md)：SAM、PA、Trend 的边界与后续管理方式。
 
 - [中文使用指南](docs/quick-start-zh.md)：输入、输出、体验方式和正式接入边界。
 - [项目维护规则](AGENTS.md)：审批、测试、提交和数据安全。

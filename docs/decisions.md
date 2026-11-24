@@ -1,5 +1,9 @@
 # Design decisions
 
+## 2026-11-24 Public presentation and report catalog
+
+The owner requested public visibility and a public-facing Chinese introduction with fictional examples. Preserve the repository address, current runtime and pinned distribution; use a SAM/PA/Trend catalog rather than moving working modules. PA admission and an independent Trend package require separate review. Public visibility does not select an open-source license. Historical private-state records remain dated evidence, not current access instructions.
+
 1. Retain original business implementation and entrypoints. Do not refactor numerical functions merely to initialize version management.
 2. Externalize local paths and customer-specific rules in private configuration snapshots. Defaults, ordering and matching semantics remain compatibility requirements.
 3. Keep the original private workspace and application checkpoint objects untouched. Prepare only reviewed sanitized files for a separately approved repository boundary; never copy its .git or push all refs.
