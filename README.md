@@ -2,17 +2,17 @@
 
 把 NetApp ONTAP AutoSupport（ASUP）日志转成直观的 Excel SAM 报告，方便存储管理员检查容量、配置、固件、告警和最佳实践。无需连接生产存储；本项目不执行存储配置变更，也不会实际转换 FlexGroup。
 
-本仓库将逐步汇集 **SAM Report、PA Report、Trend Report**。当前优先交付 SAM；PA 和 Trend 按各自的数据源、安装包与验证结果逐项接入，不影响现有 SAM 使用方式。仓库地址暂保留 `netapp-sam-report`，不因展示名称调整而移动目录或改变入口。
+本仓库按 **SAM Report、PA Report、Trend Report** 三个独立 Skill 管理。SAM 保留原有源码和分发包；PA 以独立源码安装候选包接入；Trend 后续整合历史容量、配置和性能分析。各自安装、版本和验证，不要求一次更新全部 Skill。仓库地址保留 `netapp-sam-report`，不移动现有 SAM 入口。
 
 ## 报告与 Skill 导航
 
 | 报告 | 主要用途 | 输入 | 当前状态 |
 |---|---|---|---|
 | **SAM Report** | 配置巡检、容量、固件、Case、网络事件和最佳实践 | 离线 ASUP 日志及本地知识库 | 已提供可下载的分发候选包 |
-| **PA Report** | 性能分析报告，具体指标以未来接入版本为准 | Performance Archive | 计划接入，本仓库尚未提供 PA 安装包 |
-| **Trend Report** | 多月份容量、Inode、Case 与设备变化趋势 | 历史 SAM 报告 | 已保留趋势源码，独立分发包和接入验收待完善 |
+| **PA Report** | Node/Aggr/Volume/FlexGroup/端口性能、热点卷、协议和 FabricPool | 离线 Performance Archive，可选 ASUP 端口配置 | [0.1.1 源码安装候选](docs/pa-report.md)，独立九页报告 |
+| **Trend Report** | 目标为历史容量、配置、性能趋势 | 历史 SAM 与 PA 结果 | 已有容量等趋势源码；统一三类趋势 Skill/包尚未交付 |
 
-详细规划见 [多报告接入规范](docs/report-catalog.md)。以下功能和安装说明专指当前 SAM 包，不代表 PA、Trend 已包含在该安装入口中。
+详细规划见 [多报告接入规范](docs/report-catalog.md)。PA 的完整源码位于 [packages/pa](packages/pa)，下载与安装见 [PA 中文指南](docs/pa-report.md)，示例见 [PA 虚构样板](examples/PA报告样板.md)。下面 SAM 功能和安装说明仍只针对 SAM，不会安装 PA 或 Trend。
 
 ## 报告效果预览
 

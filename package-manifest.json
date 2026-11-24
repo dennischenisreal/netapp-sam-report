@@ -8,18 +8,18 @@
     },
     {
       "path": ".gitignore",
-      "sha256": "779f7f6ff09faea9a47d3d3d2c14b1fa3d2704007e2dadc054ef9dcc5493029e",
-      "bytes": 733
+      "sha256": "5624424fc1e0d0182dc7cbd934454cd5915279d19b1787198fff877e5ce15bca",
+      "bytes": 784
     },
     {
       "path": "AGENTS.md",
-      "sha256": "ffe341bbc158b8ecb58ed26fed16071c150794a5af810b50f17f6328293d9077",
-      "bytes": 5424
+      "sha256": "f04d71b9bf1561ae6bec090e429eab456820a3d9500b0d777d87fce56b8e7b21",
+      "bytes": 5870
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "9c3fd3e106d72ffd25805a430a272d349be90043b0c7ed788ac3e113605b222f",
-      "bytes": 2356
+      "sha256": "0d507d0221ae01cebd98d91f24f3b5847ceafa9f8fc8381f27d2914df466dec2",
+      "bytes": 2739
     },
     {
       "path": "config/customer-profiles.example.json",
@@ -30,6 +30,31 @@
       "path": "config/project.example.json",
       "sha256": "68f37daee8979e9c4b2d2ad4bec038b9a8c025a06f308cacdf2f297a74dbac83",
       "bytes": 909
+    },
+    {
+      "path": "distribution/netapp-sam-report-portable.zip",
+      "sha256": "8c1b0b17f4d97fdea26e49d02ef8e12c5ca68107f119b0de2c41db63cb88d061",
+      "bytes": 215494
+    },
+    {
+      "path": "distribution/pa/netapp-pa-report-0.1.1-source.zip",
+      "sha256": "280e7905e5a759a6059450ebbd57033d95c9905050171a936b51432edad1266d",
+      "bytes": 146743
+    },
+    {
+      "path": "distribution/pa/SHA256SUMS.txt",
+      "sha256": "711ed6092aaaab0b9565ec067237d0d22b336d7f68e33cf8987ee9d2f1503161",
+      "bytes": 101
+    },
+    {
+      "path": "distribution/SHA256SUMS.txt",
+      "sha256": "8d8e02804ce4008b4a011f48abdf705fe06aa42d2aca06248dae759822342192",
+      "bytes": 97
+    },
+    {
+      "path": "docs/知识库输入约定.md",
+      "sha256": "108f46e01acce8905c598d67313a5d159c8f4530b135dc73eb6ba348bbc6c7af",
+      "bytes": 2480
     },
     {
       "path": "docs/acceptance.md",
@@ -43,8 +68,8 @@
     },
     {
       "path": "docs/decisions.md",
-      "sha256": "22bd4c6e11b7830b48b1178f8e6c2392c264912810c15f734f25aa071f79d00d",
-      "bytes": 2543
+      "sha256": "4b5700edf675420d6909256579582ee191490c309fb262771a4e93a970413793",
+      "bytes": 3390
     },
     {
       "path": "docs/maintenance-boundary.md",
@@ -57,14 +82,29 @@
       "bytes": 2225
     },
     {
+      "path": "docs/pa-report.md",
+      "sha256": "43d13882e02f7e2e16561b79469c36630d4bc7450340279bcfff9909dbce33d5",
+      "bytes": 4872
+    },
+    {
       "path": "docs/project-context.md",
       "sha256": "34e688c9f5efdc18f27ba4fc6dd42bb56d3054b1b410bd8b150109a52942abfe",
       "bytes": 1707
     },
     {
+      "path": "docs/quick-start-zh.md",
+      "sha256": "8441103b1e036e5bbd8391a9e20c050dfe9efd1943c69600b38f2e8e12d0ed31",
+      "bytes": 3292
+    },
+    {
       "path": "docs/release-process.md",
       "sha256": "c4f26d99019abd24efe8a584be48340a81309a68ca309df5244db093997fe39e",
       "bytes": 1191
+    },
+    {
+      "path": "docs/report-catalog.md",
+      "sha256": "18d111e8ef65b64b12c2d80f3cc7a06a4b1fbdf30974825eacd2b5a6c07b8ad1",
+      "bytes": 3942
     },
     {
       "path": "docs/requirements.md",
@@ -73,8 +113,8 @@
     },
     {
       "path": "docs/roadmap.md",
-      "sha256": "ce8260d91681125286d7377f1a0a68a809bf55cfb5a9d0a6ee040eb43a7954db",
-      "bytes": 2839
+      "sha256": "600fee8cdef036ca271792d37eda52fb254d8d4f6194ac86bd9c06d78edce6ee",
+      "bytes": 3440
     },
     {
       "path": "docs/rollback.md",
@@ -87,14 +127,269 @@
       "bytes": 1844
     },
     {
+      "path": "docs/skill-distribution-validation.md",
+      "sha256": "ef790629d2981341f4149ec1c350f2f5883e7c64dd9310eed3b88fe758692a99",
+      "bytes": 3014
+    },
+    {
+      "path": "docs/Skill中文安装与使用指南.md",
+      "sha256": "3a174cd3cb9b37fbe4505f78008bbe6d83e35c4e21a787e89bffae9439670568",
+      "bytes": 10699
+    },
+    {
+      "path": "examples/PA报告样板.md",
+      "sha256": "dbacd33386192938f8ce4be8323dbecd9bebc7be08cfaa96bf05aa5cbc1eeef1",
+      "bytes": 1743
+    },
+    {
+      "path": "examples/SAM报告样板.md",
+      "sha256": "894d55294fb2cca9c385747a9102f2d25ecf07a8e43472b1a634c327629a4d55",
+      "bytes": 4063
+    },
+    {
+      "path": "packages/pa/.gitattributes",
+      "sha256": "81e6c8adac3ed1ca45068845e77fbcc39465045e95ab0ca64edf9e06b60b576b",
+      "bytes": 145
+    },
+    {
+      "path": "packages/pa/.github/workflows/tests.yml",
+      "sha256": "794197bc7d3533f594ffeabb694d0b4853065b4589a0a363fa4661737beb114a",
+      "bytes": 412
+    },
+    {
+      "path": "packages/pa/.gitignore",
+      "sha256": "934525c63f95b7c7c266dcc39b8f1576b27f78f160439f256412febf044e9bf3",
+      "bytes": 238
+    },
+    {
+      "path": "packages/pa/AGENTS.md",
+      "sha256": "6c5a2a8c2eee18b27964593fb27599fe65009fa94fba798d9f1b988805782902",
+      "bytes": 813
+    },
+    {
+      "path": "packages/pa/build_performance_workbook.mjs",
+      "sha256": "46407f3af9bbfabaa14a2dc940f410f0343ddd1ea46e1152780a9b8ba3552206",
+      "bytes": 21050
+    },
+    {
+      "path": "packages/pa/CHANGELOG.md",
+      "sha256": "3c4c68cd4c67a0403f674bd6762a226c56f734153827cca358b47238ac78ac49",
+      "bytes": 1164
+    },
+    {
+      "path": "packages/pa/config/project.example.json",
+      "sha256": "289b1efc3a0ed89e858137ace80583d82833427469c478f697bbca49888eff00",
+      "bytes": 140
+    },
+    {
+      "path": "packages/pa/docs/github-sync-plan.md",
+      "sha256": "b2093d2eff65bde1bdabf117e6e58aa3c60ce64aed1bc1ae6a29ea241e9b494b",
+      "bytes": 4403
+    },
+    {
+      "path": "packages/pa/docs/trend-data-contract-plan.md",
+      "sha256": "285a0de9359a21ddd9c0b468b789bc8ec4c93d95f7cdd4b7232619c67a32cbf6",
+      "bytes": 2350
+    },
+    {
+      "path": "packages/pa/docs/validation.md",
+      "sha256": "ecc033e95a6f5e41bea8b8c396f78c8609ab9aff71a4077ae2ef456e4310a536",
+      "bytes": 3325
+    },
+    {
+      "path": "packages/pa/pa_asup_network.py",
+      "sha256": "a524f8bf4a67f2c811a2e0c66eac556c45cdba3daced399b69a1f3985359f0b2",
+      "bytes": 6472
+    },
+    {
+      "path": "packages/pa/pa_capabilities.py",
+      "sha256": "39ef94b27199723e8d3111d2151541d8390751aca3a1e9c541d301bc9e0e3452",
+      "bytes": 13528
+    },
+    {
+      "path": "packages/pa/pa_compact_counters.py",
+      "sha256": "27a269186a61da0d0540230d1d0c11d414ad512970082fc64f719b6e8a46454b",
+      "bytes": 9293
+    },
+    {
+      "path": "packages/pa/pa_probe.py",
+      "sha256": "aae06321bb7c5e95f9f512abfeb7626cefef60652da65261ca855ee4be1307e0",
+      "bytes": 14692
+    },
+    {
+      "path": "packages/pa/pa_runtime.py",
+      "sha256": "1e16300cc6172d820408b5a89027e6fc85ca98e041a2ba736b99cd32ae744d25",
+      "bytes": 599
+    },
+    {
+      "path": "packages/pa/performance_analysis.py",
+      "sha256": "2d23e50e10a83a450abc5b1a2d3d46b426418dec53936ef2fb1810c78fad672d",
+      "bytes": 63357
+    },
+    {
+      "path": "packages/pa/performance_config.json",
+      "sha256": "1f5d974f240953ae20fa9631d6a6dcf410279144cbf7ce91d03549d049f6c7c6",
+      "bytes": 588
+    },
+    {
+      "path": "packages/pa/performance_history.py",
+      "sha256": "da91cc821f042f266604b3a165ff33193511e1bb8f2ce398ec10768ef2f00598",
+      "bytes": 30468
+    },
+    {
+      "path": "packages/pa/prepare_performance_compact.py",
+      "sha256": "26ffcfb62ff6ade9cefbeab22ccf5c84b20b6cee0e8a8b92bb8eb00aff63c49c",
+      "bytes": 31363
+    },
+    {
+      "path": "packages/pa/prepare_performance_report.py",
+      "sha256": "6e1521f409dfb3f3ef3f23049e15f904b39d30d6ad608e4e215f93c04ec18684",
+      "bytes": 34810
+    },
+    {
+      "path": "packages/pa/prepare_performance_v2.py",
+      "sha256": "4169a52a1b2852414f31e9d2ebc2131d7fbf44eb472459978da12054d3ec7f9d",
+      "bytes": 21169
+    },
+    {
+      "path": "packages/pa/publish_performance_reports.ps1",
+      "sha256": "b2cf93324903e09c733f0fc2af6cc56242b96a20163f32bcd1e7224642b4129b",
+      "bytes": 3200
+    },
+    {
+      "path": "packages/pa/README.md",
+      "sha256": "f635c5aaeb793e8e84bcdea797e3cd30c766e00e5f5cbe21013089f852bef22e",
+      "bytes": 4340
+    },
+    {
+      "path": "packages/pa/requirements.txt",
+      "sha256": "06d28d69e958deafb09f0a44fcae9b548f15e4debc14ebc39aad5f0934856fbf",
+      "bytes": 16
+    },
+    {
+      "path": "packages/pa/run_pa_report.py",
+      "sha256": "e155fe5867838d24dd7dda5ac758a969b7a0fbf4d831b785f8ed4e34d27ff5b7",
+      "bytes": 13358
+    },
+    {
+      "path": "packages/pa/run_performance_v2.py",
+      "sha256": "e864c4ae7d7f2859c6e741a01533bf1500f9eda58eeedc321e708053e2ceec7d",
+      "bytes": 8764
+    },
+    {
+      "path": "packages/pa/skills/netapp-pa-report/agents/openai.yaml",
+      "sha256": "85aa0aa8e93d5712d4540fadaa633447c00c66036327572f1d1ff1af6d77afca",
+      "bytes": 116
+    },
+    {
+      "path": "packages/pa/skills/netapp-pa-report/references/maintenance.md",
+      "sha256": "51bd44ca7aa9bc9ae0f7a5e9e809c1ec055c614309ee91cbc7867b767f0a1dbd",
+      "bytes": 4733
+    },
+    {
+      "path": "packages/pa/skills/netapp-pa-report/references/report-contract.md",
+      "sha256": "cfc8915933aff3d04376c2fd51e1b972b90ae104c4e7cdaf848f6cf8be434872",
+      "bytes": 5475
+    },
+    {
+      "path": "packages/pa/skills/netapp-pa-report/scripts/run.py",
+      "sha256": "57de3dc4efc26b7278a230351f4c6ca6244567af4c4429568766feb231ce69f5",
+      "bytes": 873
+    },
+    {
+      "path": "packages/pa/skills/netapp-pa-report/SKILL.md",
+      "sha256": "3eddcbc362c2a7d4328b7bef052dfb5d62ba6043a653beae5ba9586d957e6e30",
+      "bytes": 4031
+    },
+    {
+      "path": "packages/pa/source-inventory.json",
+      "sha256": "25ebc4a1ef762191de58e30c315f54b9bf3a4f95b98b9c04f90617c1e10e8237",
+      "bytes": 7401
+    },
+    {
+      "path": "packages/pa/test_pa_distribution.py",
+      "sha256": "2f2fdef6b491971047f7560a9301d7fbb9032a41b4490419e482abe67d0a913a",
+      "bytes": 6097
+    },
+    {
+      "path": "packages/pa/test_pa_probe.py",
+      "sha256": "fd2a2a0017e28d4a3370f76eac65433c1d037b02aadc0301d34a25fe672b955d",
+      "bytes": 4809
+    },
+    {
+      "path": "packages/pa/test_pa_workflow.py",
+      "sha256": "0751bca9fbd8439948c7aae01e71261f1a096ba78f1e7f38575a3d3c0aa0edd6",
+      "bytes": 9706
+    },
+    {
+      "path": "packages/pa/test_performance_compact.py",
+      "sha256": "372632c92ca01ec76cfebbb30d314632e32147047cce31fffc4a878e96625475",
+      "bytes": 8865
+    },
+    {
+      "path": "packages/pa/test_performance_report.py",
+      "sha256": "fe304cdb17e7994d53fa14abb966210f16f7fbacaa88954c793684ec3968c78e",
+      "bytes": 6600
+    },
+    {
+      "path": "packages/pa/test_performance_v2.py",
+      "sha256": "342d860601dc13491de51d33d5bd9a3bb299ad79fc9aa7098bd2f1cbcc74f4e3",
+      "bytes": 8561
+    },
+    {
+      "path": "packages/pa/test_validate_pa.py",
+      "sha256": "aec38192323a95840d057a610461e94d67a71a6336a82904f4d779955d9e8788",
+      "bytes": 5108
+    },
+    {
+      "path": "packages/pa/tools/check_source_privacy.py",
+      "sha256": "747d80d71f5bcb8c35ff243cc449953e6569a0fa3cda1ffbbc309027c9d403fb",
+      "bytes": 2638
+    },
+    {
+      "path": "packages/pa/tools/distribution.py",
+      "sha256": "c6c957f3d5d8d867029ab6102f700e60347b7ad20191964bdabe295080d8a2cd",
+      "bytes": 8257
+    },
+    {
+      "path": "packages/pa/tools/install_skill.ps1",
+      "sha256": "431be95a72652f4990fbe966214b56923e2d88f94c5c0027533758fdfe690a2a",
+      "bytes": 1532
+    },
+    {
+      "path": "packages/pa/validate_pa.py",
+      "sha256": "9de16cc36081e71375023bac9f4707290ff8ccc9c3ab24934ce7f86a07a57e3c",
+      "bytes": 19183
+    },
+    {
+      "path": "packages/pa/verify_performance_compact.py",
+      "sha256": "c256a4e98ce808073c44bf5ebbe1b837865abfea8ab0bb5f123a147f087a4525",
+      "bytes": 10100
+    },
+    {
+      "path": "packages/pa/verify_performance_v2.py",
+      "sha256": "0f03b3aee4fc4a8d5df162449b390dd869bc138f34dcd19d0b6e8fb8a214d25b",
+      "bytes": 5728
+    },
+    {
+      "path": "packages/pa/verify_performance_workbooks.py",
+      "sha256": "b05632e9ba9b7e2dd54a7005e0aa02e9457ede5e2068946e356e80b70e52d3c8",
+      "bytes": 6817
+    },
+    {
+      "path": "packages/pa/VERSION",
+      "sha256": "80447316529fc62014fbaa047fb67c51ac30e32830cda370405349d8d66d196c",
+      "bytes": 6
+    },
+    {
       "path": "packaging/templates/isolation_guard.py",
       "sha256": "814cbc90707af80b7d708037ff2637529f9484f56ca5851f07f0d5dcea35dd06",
       "bytes": 947
     },
     {
       "path": "README.md",
-      "sha256": "262a789cadacd8881db83eab3ffa4f8480ae140375b70b8c9e28f1c88514d4b1",
-      "bytes": 8247
+      "sha256": "be5b2c8fc0b43ea844432baeede8cd21596f1cff776e6e413d62c160ee7da50b",
+      "bytes": 8516
     },
     {
       "path": "requirements.in",
@@ -435,46 +730,6 @@
       "path": "tools/validate_synthetic_report.py",
       "sha256": "082150620e9fb454437905d49c3b62aca80aeaa3b547c790d7df90189d9062b6",
       "bytes": 30008
-    },
-    {
-      "path": "docs/quick-start-zh.md",
-      "sha256": "8441103b1e036e5bbd8391a9e20c050dfe9efd1943c69600b38f2e8e12d0ed31",
-      "bytes": 3292
-    },
-    {
-      "path": "distribution/SHA256SUMS.txt",
-      "sha256": "8d8e02804ce4008b4a011f48abdf705fe06aa42d2aca06248dae759822342192",
-      "bytes": 97
-    },
-    {
-      "path": "distribution/netapp-sam-report-portable.zip",
-      "sha256": "8c1b0b17f4d97fdea26e49d02ef8e12c5ca68107f119b0de2c41db63cb88d061",
-      "bytes": 215494
-    },
-    {
-      "path": "docs/Skill中文安装与使用指南.md",
-      "sha256": "3a174cd3cb9b37fbe4505f78008bbe6d83e35c4e21a787e89bffae9439670568",
-      "bytes": 10699
-    },
-    {
-      "path": "docs/skill-distribution-validation.md",
-      "sha256": "ef790629d2981341f4149ec1c350f2f5883e7c64dd9310eed3b88fe758692a99",
-      "bytes": 3014
-    },
-    {
-      "path": "docs/知识库输入约定.md",
-      "sha256": "108f46e01acce8905c598d67313a5d159c8f4530b135dc73eb6ba348bbc6c7af",
-      "bytes": 2480
-    },
-    {
-      "path": "examples/SAM报告样板.md",
-      "sha256": "894d55294fb2cca9c385747a9102f2d25ecf07a8e43472b1a634c327629a4d55",
-      "bytes": 4063
-    },
-    {
-      "path": "docs/report-catalog.md",
-      "sha256": "64e8d8d565eef39647798e6b179f8360a8e67dee7346708bacb7bd81daa960f9",
-      "bytes": 2806
     }
   ]
 }

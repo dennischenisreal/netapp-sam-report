@@ -42,6 +42,7 @@ messages.json
 *.7z
 *.zip
 !distribution/netapp-sam-report-portable.zip
+!distribution/pa/netapp-pa-report-0.1.1-source.zip
 *.rar
 *.tar
 *.gz

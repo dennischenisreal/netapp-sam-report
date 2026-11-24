@@ -1,5 +1,18 @@
 # Design decisions
 
+## 2026-11-24 PA admission and independent report versions
+
+The owner requested evaluation and GitHub synchronization for three separately
+usable Skills. Use this existing suite repository rather than a new PA repository:
+preserve SAM paths and distribution; put PA's complete project in packages/pa
+with its own version, source-install ZIP, privacy checks and tests. The packages
+prefix avoids customer Reports output ignores. The existing local PA workspace
+remains its sole editing source, just as SAM retains its own maintenance boundary.
+Do not change either production installation during admission. Trend's capacity,
+configuration and performance integration is a versioned interface plan, not
+implemented functionality. Push the admission branch only; merging, stable
+tags/Releases, root CI and source handover remain separate decisions.
+
 ## 2026-11-24 Public presentation and report catalog
 
 The owner requested public visibility and a public-facing Chinese introduction with fictional examples. Preserve the repository address, current runtime and pinned distribution; use a SAM/PA/Trend catalog rather than moving working modules. PA admission and an independent Trend package require separate review. Public visibility does not select an open-source license. Historical private-state records remain dated evidence, not current access instructions.

@@ -1,0 +1,3 @@
+interface:
+  display_name: "NetApp PA Report"
+  short_description: "Generate offline NetApp PA performance reports"
