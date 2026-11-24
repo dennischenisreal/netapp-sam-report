@@ -33,9 +33,15 @@
 
 仓库为 **Private**：同事需要仓库读取权限才能下载或克隆；使用相同邮箱不等于自动获得访问权限。不要通过改成 Public 来绕过权限管理。
 
-目前已验证的是“脱敏源码包 + 本机隔离安装与合成测试”，不是“任意 Agent 下载即用”的通用发行版。维护者已有的生产 Skill 部署继续独立使用，未因本次 GitHub 接入改变。
+现已提供可导入的 **Skill 分发候选包**，支持 Codex、WorkBuddy、TRAE 的明确目录安装；不是只下载主 Skill 文件夹。维护者已有的生产 Skill 部署继续独立使用，未因本次 GitHub 接入改变。
 
-同事可以先按照下面步骤验证示例运行环境。正式接入自己的 ASUP、知识库和 Agent，仍需配置路径、补齐依赖、确认 Agent 的 Skill 安装规则并完成真实输入验收；不应直接复制维护者私有配置。后续建议单独交付一套可分发安装包和中文接入流程。
+### 下载、安装和使用
+
+1. 在本仓库打开 `distribution/netapp-sam-report-portable.zip`，点击下载原始文件；同时下载该目录的 `SHA256SUMS.txt`，核验哈希。GitHub 的“Download ZIP”下载的是整个源码仓库，不能代替这个 Skill 安装包。
+2. 阅读 [Skill 中文安装与使用指南](docs/Skill中文安装与使用指南.md)。Codex / TRAE 解压后使用明确目录安装器；WorkBuddy 可按指南上传原始 Skill ZIP。
+3. 按 [知识库输入约定](docs/知识库输入约定.md)准备自己的输入，在新的独立工作空间执行 setup、doctor，再让 Agent 生成报告；先用非生产样本验证。
+
+包内包含可阅读的安装器、Python 入口与六模块运行源码（`assets/runtime.zip`），不含客户日志、报告或知识库。包固定基于已审核提交 `8f611405938c656e5045993b223ab1e67504a807`，不会因仓库文档更新而自动变化。Python 依赖及 7-Zip 需要另外准备。实际三个客户端 UI 导入、自动触发及新机器依赖安装尚未验证；详见 [分发验收说明](docs/skill-distribution-validation.md)。这不是稳定 Release。
 
 ## 快速体验：不使用真实客户数据
 

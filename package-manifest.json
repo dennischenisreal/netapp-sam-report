@@ -8,18 +8,18 @@
     },
     {
       "path": ".gitignore",
-      "sha256": "0f76d41bf89116df0cb0db328101ac96fbd71a3bfa65b5edadcae639b74f3307",
-      "bytes": 688
+      "sha256": "779f7f6ff09faea9a47d3d3d2c14b1fa3d2704007e2dadc054ef9dcc5493029e",
+      "bytes": 733
     },
     {
       "path": "AGENTS.md",
-      "sha256": "2abdf228637687753f85de46300d8083f015fba0bd69f05ce858fe7afcd60c82",
-      "bytes": 4803
+      "sha256": "75e90c762bb144ba1ef7496e98344f3aa43a87e9b2253207a6b508be2f523a0c",
+      "bytes": 5080
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "8852ee224f17ab8a48d791d97eb363bee3788edaafe4c48599df7a2a3c7f1de0",
-      "bytes": 1696
+      "sha256": "e86a966dfe3da6c456d6008511c62b4434b2a9b71f4f7dbcd529bc36cd0b5fcc",
+      "bytes": 2103
     },
     {
       "path": "config/customer-profiles.example.json",
@@ -93,8 +93,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "d50b76bb86099cfa436c870ea19d6e8188a88a1c71886f42f3d5d3c13fb3b247",
-      "bytes": 5302
+      "sha256": "d28447808a9531b00d39409d58b1dffebd6e4c2753fce5af23844de583d3d09c",
+      "bytes": 6144
     },
     {
       "path": "requirements.in",
@@ -440,6 +440,31 @@
       "path": "docs/quick-start-zh.md",
       "sha256": "8441103b1e036e5bbd8391a9e20c050dfe9efd1943c69600b38f2e8e12d0ed31",
       "bytes": 3292
+    },
+    {
+      "path": "distribution/SHA256SUMS.txt",
+      "sha256": "8d8e02804ce4008b4a011f48abdf705fe06aa42d2aca06248dae759822342192",
+      "bytes": 97
+    },
+    {
+      "path": "distribution/netapp-sam-report-portable.zip",
+      "sha256": "8c1b0b17f4d97fdea26e49d02ef8e12c5ca68107f119b0de2c41db63cb88d061",
+      "bytes": 215494
+    },
+    {
+      "path": "docs/Skill中文安装与使用指南.md",
+      "sha256": "3a174cd3cb9b37fbe4505f78008bbe6d83e35c4e21a787e89bffae9439670568",
+      "bytes": 10699
+    },
+    {
+      "path": "docs/skill-distribution-validation.md",
+      "sha256": "1df1f70125c21d2a2f2ba684050eb36e952600f9338897f10f291205613cde85",
+      "bytes": 2943
+    },
+    {
+      "path": "docs/知识库输入约定.md",
+      "sha256": "108f46e01acce8905c598d67313a5d159c8f4530b135dc73eb6ba348bbc6c7af",
+      "bytes": 2480
     }
   ]
 }

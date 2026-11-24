@@ -41,6 +41,7 @@ conversations.json
 messages.json
 *.7z
 *.zip
+!distribution/netapp-sam-report-portable.zip
 *.rar
 *.tar
 *.gz
