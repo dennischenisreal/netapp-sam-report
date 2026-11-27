@@ -15,7 +15,7 @@ custom thresholds require coordinated analysis/header/verifier changes and revie
 | Aggr | Native aggregate throughput, IOPS, latency, disk utilization/latency, read/write mix. Do not replace missing aggregate IO with summed volume IO. |
 | Volume | Logical FlexVol and FlexGroup parents only; IO, IOPS, latency, operation mix, high-latency duration, zombie gauges. |
 | FlexGroup | Constituents, relative hotspot marks, parent load distribution and normalized node distribution on one sheet. No SAM inventory/member completeness comparison. |
-| Network Port | IO, individual RX/TX utilization and peaks, high-utilization duration, observed error increments, explicit ASUP port role. Hide only all-observed-down links. |
+| Network Port | IO, individual RX/TX utilization and peaks, high-utilization duration, observed error increments, mapped ASUP LIF purpose and separate raw physical Role. Hide only all-observed-down links. |
 | 热点卷分析 | Site-wide Top 10 each by average latency, throughput and IOPS. Exclude node root volumes and constituent duplicates; not all SVM root volumes. |
 | 协议与元数据 | Separate NFSv3/v4/v4.1 and CIFS SMB1/SMB2+3 by actual activity. CIFS-only Sites are valid. Other volume operations are not automatically metadata. |
 | FabricPool | Matched object-store GET/PUT throughput, IOPS and latency. PUT is cloud writing, not proof of cold-data-only tiering or physical free-space gain. |
@@ -57,11 +57,28 @@ bins and its longest contiguous run. Zero peers yield N/A ratio but can identify
 sole active member. Low load does not trigger a hotspot. Coverage below 90% does not
 establish sustained imbalance over the entire requested window.
 
-Port Role comes directly from `network-ports.xml:role`, the same ASUP source as
-SAM Network Port. Match node name + serial + cluster UUID, choose the nearest ASUP
-snapshot to the PA window end, and display its actual date. Do not derive a
-physical role by concatenating LIF NFS/CIFS/intercluster services. Missing role is unknown.
-ASUP enrichment currently reads direct `.7z` children of the specified directory.
+Starting in 0.2.0, the main port-purpose column is distinct from physical Role.
+Match node name + serial + cluster UUID, choose the nearest ASUP snapshot to
+the PA window end, and display its actual date. Preserve `network-ports.xml:role`
+in a separate raw physical Role column; a physical `data` Role does not exclude
+an intercluster LIF.
+
+Classify `network-interface.xml` LIF roles and explicit services into business
+data, cluster, intercluster and management categories. Match only current
+`curr_node`/`curr_port`, not home/failover targets or LIF/IP naming guesses.
+Expand IFGRP endpoints through `ifgrps.xml` (`ifgrp.xml` alias supported) members.
+An explicitly recorded VLAN may trace its named base and then IFGRP members;
+an unrecorded hyphenated interface name alone is not topology evidence.
+Node-scoped membership is authoritative; normalize the active `*` suffix only
+as a fallback to `network-ports.xml:ifgrp`. Direct LIF evidence may identify an
+interface omitted from the port table. Raw cluster Role remains cluster.
+
+Show all actually mapped categories and mark shared ports; do not concatenate
+NFS/CIFS protocol names as roles. Generic data Role without LIF evidence is
+purpose-unconfirmed, not proof of business traffic. Missing configuration is unknown.
+Never split physical PA traffic by LIF/category, sum physical and logical
+interfaces, fabricate PA rows from ASUP inventory, or call the snapshot historical
+traffic attribution. ASUP enrichment reads direct `.7z` children of the specified directory.
 
 ## Calibration And Future Comparisons
 

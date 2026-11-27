@@ -50,7 +50,7 @@ class PurposeTests(unittest.TestCase):
         groups = [{"node": "n1", "ifgrp-name": "a0a", "ports": ["e1a"]}]
         result = describe(ports, lifs, groups, "n1")
         self.assertEqual(result["e1a"]["role_raw"], "data")
-        self.assertEqual(result["e1a"]["role"], "data（数据）")
+        self.assertEqual(result["e1a"]["role"], "data（业务口）")
         self.assertIn("CIFS", result["e1a"]["lif_services"])
         self.assertNotIn("CIFS", result["e1b"]["lif_services"])
         self.assertEqual(result["e1a"]["ifgrp"], "a0a")
@@ -68,6 +68,82 @@ class PurposeTests(unittest.TestCase):
             [], "n1")["e0a"]
         self.assertEqual(result["role"], "cluster（集群互联）")
         self.assertEqual(describe([{"node": "n1", "port": "e0a"}], [], [], "n1")["e0a"]["role"], "未知")
+
+    def test_intercluster_ifgrp_maps_to_each_member_not_other_group(self):
+        ports = [{"node": "n1", "port": p, "role": "data", "type": "physical"}
+                 for p in ("e1a", "e1b", "e2a")]
+        groups = [{"node": "n1", "ifgrp-name": "a0a", "ports": ["e1a", "e1b"]},
+                  {"node": "n1", "ifgrp-name": "a0b", "ports": ["e2a"]}]
+        lifs = [{"curr_node": "n1", "curr_port": "a0a", "role": "intercluster",
+                 "vif": "arbitrary", "address": "192.0.2.1", "data_protocol": ["none"]}]
+        result = describe(ports, lifs, groups, "n1")
+        for name in ("a0a", "e1a", "e1b"):
+            self.assertEqual(result[name]["purpose_roles"], ["intercluster"])
+            self.assertIn("intercluster", result[name]["role"])
+            self.assertEqual(result[name]["lif_evidence"][0]["address"], "192.0.2.1")
+        self.assertEqual(result["e1a"]["role_raw"], "data")
+        self.assertEqual(result["e2a"]["purpose_roles"], [])
+
+    def test_shared_port_does_not_create_protocol_roles(self):
+        lifs = [{"curr_node": "n1", "curr_port": "e1a", "role": "data",
+                 "services": ["data-nfs", "data-cifs"]},
+                {"curr_node": "n1", "curr_port": "e1a", "services": ["intercluster-core"]}]
+        row = describe([{"node": "n1", "port": "e1a", "role": "data"}], lifs, [], "n1")["e1a"]
+        self.assertEqual(row["purpose_roles"], ["data", "intercluster"])
+        self.assertIn("共用", row["role"])
+        self.assertNotIn("NFS", row["role"])
+        self.assertNotIn("CIFS", row["role"])
+
+    def test_intercluster_service_scalar_and_same_name_other_node(self):
+        lifs = [{"curr_node": "n1", "curr_port": "e1a", "services": "intercluster-core"},
+                {"curr_node": "n2", "curr_port": "e1a", "role": "data"}]
+        row = describe([{"node": "n1", "port": "e1a", "role": "data"}], lifs, [], "n1")["e1a"]
+        self.assertEqual(row["purpose_roles"], ["intercluster"])
+
+    def test_vlan_lif_maps_through_ifgrp_without_duplicating_sibling_lifs(self):
+        ports = [{"node": "n1", "port": "a0a", "type": "if-group", "role": "data"},
+                 {"node": "n1", "port": "a0a-100", "type": "vlan", "role": "data"},
+                 {"node": "n1", "port": "e1a", "type": "physical", "role": "data"}]
+        groups = [{"node": "n1", "ifgrp-name": "a0a", "ports": ["e1a", "e1b"]}]
+        lifs = [{"curr_node": "n1", "curr_port": "a0a-100", "role": "intercluster"},
+                {"curr_node": "n1", "curr_port": "e1a", "role": "data"}]
+        result = describe(ports, lifs, groups, "n1")
+        self.assertEqual(result["e1a"]["purpose_roles"], ["data", "intercluster"])
+        self.assertEqual(result["e1b"]["purpose_roles"], ["intercluster"])
+        self.assertEqual(result["a0a"]["purpose_roles"], ["intercluster"])
+        self.assertEqual(result["a0a-100"]["purpose_roles"], ["intercluster"])
+
+    def test_missing_vlan_record_is_not_guessed_from_name(self):
+        row = describe(
+            [{"node": "n1", "port": "e1a", "role": "data"}],
+            [{"curr_node": "n1", "curr_port": "e1a-100", "role": "intercluster"}], [], "n1")
+        self.assertEqual(row["e1a"]["purpose_roles"], [])
+
+    def test_current_placement_not_home_or_lif_name(self):
+        result = describe(
+            [{"node": "n1", "port": "e1a", "role": "data"},
+             {"node": "n1", "port": "e1b", "role": "data"}],
+            [{"curr_node": "n1", "curr_port": "e1b", "home_node": "n1", "home_port": "e1a",
+              "role": "intercluster", "vif": "nfs-business"},
+             {"home_node": "n1", "home_port": "e1a", "role": "intercluster"}], [], "n1")
+        self.assertEqual(result["e1a"]["purpose_roles"], [])
+        self.assertEqual(result["e1b"]["purpose_roles"], ["intercluster"])
+
+    def test_direct_lif_identifies_port_absent_from_network_ports(self):
+        self.assertEqual(describe([], [
+            {"curr_node": "n1", "curr_port": "e0a", "role": "cluster"}], [], "n1")[
+                "e0a"]["purpose_roles"], ["cluster"])
+
+    def test_conflicting_ifgrp_membership_is_not_silently_selected(self):
+        with self.assertRaisesRegex(ValueError, "Conflicting"):
+            describe([], [], [{"node": "n1", "ifgrp-name": name, "ports": ["e1a"]}
+                              for name in ("a0a", "a0b")], "n1")
+
+    def test_ifgrp_active_marker_fallback_is_normalized(self):
+        result = describe([{"node": "n1", "port": "e1a", "ifgrp": "a0a*", "role": "data"}],
+                          [{"curr_node": "n1", "curr_port": "a0a", "role": "intercluster"}], [], "n1")
+        self.assertEqual(result["e1a"]["ifgrp"], "a0a")
+        self.assertEqual(result["e1a"]["purpose_roles"], ["intercluster"])
 
 
 class RefinedTests(unittest.TestCase):

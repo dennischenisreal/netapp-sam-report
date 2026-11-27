@@ -6,7 +6,7 @@ description: Generate recurring NetApp ONTAP PA performance Excel reports from o
 # NetApp PA Report
 
 This Skill is the installed entry to the managed `netapp-pa-report` project,
-not a second copy of its parsers. Current package baseline: version 0.1.1.
+not a second copy of its parsers. Current package baseline: version 0.2.0.
 
 ## Generate A Report
 

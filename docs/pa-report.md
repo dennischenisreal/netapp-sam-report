@@ -7,7 +7,7 @@ PA 是独立的 `netapp-pa-report` Skill。输入为用户提供的离线 Perfor
 九页包括 Node、Aggr、Volume、FlexGroup、Network Port、热点卷分析、
 协议与元数据、FabricPool、指标说明。
 
-当前为 **0.1.1 源码安装候选**，不是稳定 Release，也不是已认证的跨 Agent 包。
+当前为 **0.2.0 源码安装候选**，不是稳定 Release，也不是已认证的跨 Agent 包。
 三类报告的统一 Trend Skill 尚未完成，只有原容量趋势源码与后续接口计划。
 
 ## 下载完整源码
@@ -15,13 +15,13 @@ PA 是独立的 `netapp-pa-report` Skill。输入为用户提供的离线 Perfor
 两种方式择一：
 
 1. 克隆/下载本仓库，进入 `packages/pa`。
-2. 下载 [PA 完整源码 ZIP](../distribution/pa/netapp-pa-report-0.1.1-source.zip)
+2. 下载 [PA 完整源码 ZIP](../distribution/pa/netapp-pa-report-0.2.0-source.zip)
    和 [SHA256SUMS.txt](../distribution/pa/SHA256SUMS.txt)，在自己的机器核验后解压。
 
 ```powershell
-Get-FileHash -LiteralPath ./netapp-pa-report-0.1.1-source.zip -Algorithm SHA256
+Get-FileHash -LiteralPath ./netapp-pa-report-0.2.0-source.zip -Algorithm SHA256
 Get-Content -LiteralPath ./SHA256SUMS.txt
-Expand-Archive -LiteralPath ./netapp-pa-report-0.1.1-source.zip -DestinationPath ./PA-Source
+Expand-Archive -LiteralPath ./netapp-pa-report-0.2.0-source.zip -DestinationPath ./PA-Source
 Set-Location ./PA-Source/netapp-pa-report
 ```
 
@@ -65,6 +65,17 @@ ASUP 可省略，端口角色显示未知；每月两次分别使用不同 label
 PA 解析是实验解析，SMB/云端延迟仍待同窗 AIQUM 校准。
 端口无已验证 latency counter 时为 N/A，PUT 云端写入不等同确认冷数据下沉。
 
+### 端口用途（0.2.0）
+
+以匹配节点名、序列号和集群 UUID 的最近 ASUP 配置快照为依据：
+`network-interface.xml` 的当前 LIF 角色/服务，经 `ifgrps.xml`（兼容
+`ifgrp.xml`）成员和显式 VLAN 基接口映射到 PA 物理口，区分 data 业务口、
+cluster 集群互联及 intercluster 集群间通信。不按 LIF 名称、IP 或 home
+位置猜用途；`network-ports.xml` 的原始物理 Role 单列保留。
+仅有物理 data Role 而无 LIF 用途证据时显示用途未确认。
+共用口明确标注，但计数仍为该物理口的 PA RX/TX 总量，不能拆成各用途流量。
+ASUP 是配置时点，不等同 PA 历史流量归因；全程观测 down 的接口仍隐藏。
+
 ## 更新与验证
 
 PA 使用自己的 VERSION/CHANGELOG；不因 PA 更新修改 SAM 0.5.0 或原分发 ZIP。
@@ -87,8 +98,18 @@ PA 内嵌 workflow 仅作候选定义，不代表远端已运行。
 
 ## 本轮验收边界
 
-本机已安装的原 PA Skill 通过 doctor；源码候选包在独立目录解压、安装到
+2026-11-27 的 0.2.0 在本机通过 100 项 PA 测试、隐私预检、Skill 结构及
+已安装入口 doctor，并通过新私有双节点运行与用户指定大 Site 的实际生成验证；
+核对了 intercluster LIF、IFGRP、现有 SAM IP 清单及未改变的性能字段。
+PA 基础/native-interval 与补充 counter 复用经 SHA/身份校验的可信本地缓存，
+ASUP 网络映射重新解析；不冒称独立重新解码所有 PA counter 或官方校准。
+源码包和镜像另做校验；真实输入、报告与运行证据均不上传。
+本轮镜像和独立解压包均运行 100 项测试，其中一项可选私有元数据检查跳过；
+独立解压包安装到临时 Skills 根并通过 doctor。SAM 38 项回归再次通过。
+这些验证使用同机已有依赖，不等于新机器或跨 Agent 验收。
+
+此前 0.1.1 的源码候选包在独立目录解压、安装到
 临时 Skills 根、通过 doctor 与 88 项测试（可选私有元数据用例跳过 1 项）。
 SAM 独立隔离运行时回归 38 项通过。此前小 Site 九页真实数据验证作为历史证据，
-本次没有重新处理客户全部 Site，也没有修改正式输出。
+本次只按请求生成指定 Site 的新版本报告，没有重跑全部 Site 或覆盖旧版正式报告。
 这证明同机干净源码目录的安装路径可用，不等于全新机器或不同 Agent 已验收。

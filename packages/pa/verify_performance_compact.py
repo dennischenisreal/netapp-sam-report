@@ -150,7 +150,17 @@ def verify(directory, baseline):
         assert all(r["scope"] == "本Site" and r["style"] != "节点根卷" for r in ranked)
         assert [r["rank"] for r in ranked] == list(range(1, len(ranked) + 1))
         assert len({r["resource_id"] for r in ranked}) == len(ranked)
-    assert all(" / " not in r["role"] for r in network["rows"])
+    allowed_roles = {"data", "cluster", "intercluster", "node-mgmt", "cluster-mgmt"}
+    for row in network["rows"]:
+        roles = row["purpose_roles"]
+        assert len(roles) == len(set(roles)) and set(roles) <= allowed_roles
+        assert all(f"{role}（" in row["role"] for role in roles)
+        assert "NFS" not in row["role"] and "CIFS" not in row["role"]
+        assert bool("共用" in row["role"]) == (len(roles) > 1)
+        if row["role_raw"] == "cluster":
+            assert roles == ["cluster"]
+        if "intercluster" in roles and row["role_raw"] != "intercluster":
+            assert row["lif_evidence"], (row["node"], row["port"])
     assert model["analysis_config"]["cpu_high_pct"] == 70
     assert model["analysis_config"]["latency_watch_ms"] == 10
     assert model["analysis_config"]["network_high"] == .7
@@ -164,8 +174,10 @@ def verify(directory, baseline):
         "baseline_metric_cells_unchanged": baseline_checked,
         "resource_counts": {s["name"]: len(s["rows"]) for s in model["sheets"]},
         "flexgroup_tables": len(values["FlexGroup"].tables),
-        "port_purpose_known": sum(r["role"] != "未知" for r in network["rows"]),
-        "port_purpose_unknown": sum(r["role"] == "未知" for r in network["rows"]),
+        "port_purpose_known": sum(bool(r["purpose_roles"]) for r in network["rows"]),
+        "port_purpose_unknown": sum(not r["purpose_roles"] for r in network["rows"]),
+        "intercluster_ports": sum("intercluster" in r["purpose_roles"] for r in network["rows"]),
+        "shared_purpose_ports": sum(len(r["purpose_roles"]) > 1 for r in network["rows"]),
         "marked_flexgroup_members": sum(r.get("hotspot_marked", False)
                                        for s in model["sheets"] if s["name"] == "FlexGroup" for r in s["rows"]),
         "hotspot_ranking_rows": len(hotspots["rows"]),

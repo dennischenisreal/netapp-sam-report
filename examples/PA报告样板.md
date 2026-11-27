@@ -25,11 +25,15 @@ Read/Write 操作比以读+写操作为分母，不含 Other；字节比例另�
 
 ## Network Port
 
-| 节点 | 端口 | Role | IO MiB/s | RX 利用率 | TX 利用率 | 端口延迟 ms |
+| 节点 | 端口 | 端口用途 | IO MiB/s | RX 利用率 | TX 利用率 | 端口延迟 ms |
 | --- | --- | --- | ---: | ---: | ---: | --- |
-| DEMO-01 | e1a | data（数据） | 100.00 | 4% | 4% | N/A |
+| DEMO-01 | e1a | data（业务口） | 100.00 | 4% | 4% | N/A |
+| DEMO-01 | e1b | intercluster（集群间通信） | 50.00 | 2% | 2% | N/A |
+| DEMO-02 | e1a | data（业务口） + intercluster（集群间通信）（共用） | 125.00 | 5% | 5% | N/A |
 
-Role 直接来自同节点 ASUP network-ports 配置，不拼接 NFS/CIFS 等 LIF 服务。
+用途来自同节点 ASUP 当前 LIF 角色/服务，经 IFGRP 成员及显式 VLAN 映射，
+不把 NFS/CIFS 协议名当成物理端口角色。原 network-ports 物理 Role 单列保留；
+共用口 IO 是物理口总量，不能分摊成业务和 intercluster 流量。
 端口没有验证过的延迟 counter 时保留 N/A，不能借用卷延迟。
 只有全程观测 down 的接口隐藏；缺失和真实零不混淆。
 

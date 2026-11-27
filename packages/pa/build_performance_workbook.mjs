@@ -415,6 +415,13 @@ for (const [sheetName, range, suffix = ""] of [
     ["Aggr", "O5:V12", "ReadWrite"],
     ["Volume", `${fieldColumn(volume, "zombie_blocks")}5:${fieldColumn(volume, "actual_end")}12`, "Zombie"],
     ["Network Port", `${netCol("rx_peak")}5:${netCol("rx_longest")}12`, "Directions"],
+    ...(() => {
+      const index = network.rows.findIndex(r => r.purpose_roles?.includes("intercluster"));
+      return index < 0 ? [] : [
+        ["Network Port", `A${index + 5}:J${Math.min(index + 11, network.rows.length + 5)}`, "Intercluster"],
+        ["Network Port", `${netCol("ifgrp")}${index + 5}:${netCol("role_source")}${Math.min(index + 9, network.rows.length + 5)}`, "RoleEvidence"],
+      ];
+    })(),
     ...(detail.rows.length && detail.fields.some(f => f.key === "peer_iops_ratio") ? [
       ["FlexGroup", `${fieldColumn(detail, "peer_iops_ratio")}5:${fieldColumn(detail, "hot_longest")}12`, "HotspotRatios"],
       ...(() => {

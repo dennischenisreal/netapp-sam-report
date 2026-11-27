@@ -8,8 +8,8 @@
     },
     {
       "path": ".gitignore",
-      "sha256": "5624424fc1e0d0182dc7cbd934454cd5915279d19b1787198fff877e5ce15bca",
-      "bytes": 784
+      "sha256": "91eb3a2cdd04187e8f63b7a336ed9e5c240edb2fe491119b558e19f99ddc0798",
+      "bytes": 835
     },
     {
       "path": "AGENTS.md",
@@ -18,8 +18,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "0d507d0221ae01cebd98d91f24f3b5847ceafa9f8fc8381f27d2914df466dec2",
-      "bytes": 2739
+      "sha256": "aba413f0fb9c93ca2d4f58e8227ece00404bfe4aa657f500ce12e4f6f74853fd",
+      "bytes": 3094
     },
     {
       "path": "config/customer-profiles.example.json",
@@ -42,9 +42,14 @@
       "bytes": 146743
     },
     {
+      "path": "distribution/pa/netapp-pa-report-0.2.0-source.zip",
+      "sha256": "1c0af3f35b3f18e030a59cee721e2830fcdd02dad5317775728fe84a01918167",
+      "bytes": 150974
+    },
+    {
       "path": "distribution/pa/SHA256SUMS.txt",
-      "sha256": "711ed6092aaaab0b9565ec067237d0d22b336d7f68e33cf8987ee9d2f1503161",
-      "bytes": 101
+      "sha256": "c9ee9870d4ba1c37edd49efd529fae290566c90e3b9399979cf2bc70e034864d",
+      "bytes": 202
     },
     {
       "path": "distribution/SHA256SUMS.txt",
@@ -83,8 +88,8 @@
     },
     {
       "path": "docs/pa-report.md",
-      "sha256": "43d13882e02f7e2e16561b79469c36630d4bc7450340279bcfff9909dbce33d5",
-      "bytes": 4872
+      "sha256": "492531142b9e4e1ac8d87982f56cba735145e696e943d5e456de2f7bd4acaf7a",
+      "bytes": 6441
     },
     {
       "path": "docs/project-context.md",
@@ -103,8 +108,8 @@
     },
     {
       "path": "docs/report-catalog.md",
-      "sha256": "18d111e8ef65b64b12c2d80f3cc7a06a4b1fbdf30974825eacd2b5a6c07b8ad1",
-      "bytes": 3942
+      "sha256": "825fd1c9eb861c09f0a817264829f308b8949bed72f31e89573d350e789856df",
+      "bytes": 3973
     },
     {
       "path": "docs/requirements.md",
@@ -138,8 +143,8 @@
     },
     {
       "path": "examples/PA报告样板.md",
-      "sha256": "dbacd33386192938f8ce4be8323dbecd9bebc7be08cfaa96bf05aa5cbc1eeef1",
-      "bytes": 1743
+      "sha256": "b329003ef2184581e568bee92e5823ac1d02f33251b5faa027882b7d3d1bd4b1",
+      "bytes": 2128
     },
     {
       "path": "examples/SAM报告样板.md",
@@ -168,13 +173,13 @@
     },
     {
       "path": "packages/pa/build_performance_workbook.mjs",
-      "sha256": "46407f3af9bbfabaa14a2dc940f410f0343ddd1ea46e1152780a9b8ba3552206",
-      "bytes": 21050
+      "sha256": "8498db86e0fef0329a1a8b1c366a12892474ea15734144220d74bc237bcd8bbe",
+      "bytes": 21466
     },
     {
       "path": "packages/pa/CHANGELOG.md",
-      "sha256": "3c4c68cd4c67a0403f674bd6762a226c56f734153827cca358b47238ac78ac49",
-      "bytes": 1164
+      "sha256": "233d71e30f44860be7d354cb28f9140b996cf51d36c422879b6af3e14606bd4a",
+      "bytes": 1877
     },
     {
       "path": "packages/pa/config/project.example.json",
@@ -183,7 +188,7 @@
     },
     {
       "path": "packages/pa/docs/github-sync-plan.md",
-      "sha256": "b2093d2eff65bde1bdabf117e6e58aa3c60ce64aed1bc1ae6a29ea241e9b494b",
+      "sha256": "3f633071e99058ecf67a4bbd7bcf30251e6489207afba4c4d043615863c6b71c",
       "bytes": 4403
     },
     {
@@ -193,13 +198,13 @@
     },
     {
       "path": "packages/pa/docs/validation.md",
-      "sha256": "ecc033e95a6f5e41bea8b8c396f78c8609ab9aff71a4077ae2ef456e4310a536",
-      "bytes": 3325
+      "sha256": "a145e92724d021f0fbb1372ce7ed44c44165b359a2ef9a267a1ee8eb03050bdd",
+      "bytes": 5183
     },
     {
       "path": "packages/pa/pa_asup_network.py",
-      "sha256": "a524f8bf4a67f2c811a2e0c66eac556c45cdba3daced399b69a1f3985359f0b2",
-      "bytes": 6472
+      "sha256": "b04d1b53cab7f16099f6bf8fedced0df7d647037bcc379fb3f67a60ce62cee91",
+      "bytes": 9699
     },
     {
       "path": "packages/pa/pa_capabilities.py",
@@ -238,8 +243,8 @@
     },
     {
       "path": "packages/pa/prepare_performance_compact.py",
-      "sha256": "26ffcfb62ff6ade9cefbeab22ccf5c84b20b6cee0e8a8b92bb8eb00aff63c49c",
-      "bytes": 31363
+      "sha256": "2c02f89771354c491d2e424ca28f75c1081a4be97fc6b1974b91cefb51b89ccb",
+      "bytes": 31825
     },
     {
       "path": "packages/pa/prepare_performance_report.py",
@@ -258,8 +263,8 @@
     },
     {
       "path": "packages/pa/README.md",
-      "sha256": "f635c5aaeb793e8e84bcdea797e3cd30c766e00e5f5cbe21013089f852bef22e",
-      "bytes": 4340
+      "sha256": "b129b651f65a3a22ae7ffe6437d8a01f1d1241f34e1a93d128fef6eb7762b6b2",
+      "bytes": 4656
     },
     {
       "path": "packages/pa/requirements.txt",
@@ -288,8 +293,8 @@
     },
     {
       "path": "packages/pa/skills/netapp-pa-report/references/report-contract.md",
-      "sha256": "cfc8915933aff3d04376c2fd51e1b972b90ae104c4e7cdaf848f6cf8be434872",
-      "bytes": 5475
+      "sha256": "dfc37b06fcc33ed860f3fe83516d26a96b75b368feb712b170d448f62dd24ebe",
+      "bytes": 6618
     },
     {
       "path": "packages/pa/skills/netapp-pa-report/scripts/run.py",
@@ -298,13 +303,18 @@
     },
     {
       "path": "packages/pa/skills/netapp-pa-report/SKILL.md",
-      "sha256": "3eddcbc362c2a7d4328b7bef052dfb5d62ba6043a653beae5ba9586d957e6e30",
+      "sha256": "c2e110115784e9c7fcb2178e2f3452322c690b44fe8b02a43f30b4ff72836565",
       "bytes": 4031
     },
     {
       "path": "packages/pa/source-inventory.json",
-      "sha256": "25ebc4a1ef762191de58e30c315f54b9bf3a4f95b98b9c04f90617c1e10e8237",
-      "bytes": 7401
+      "sha256": "75df99619678e228e2879fd2fb632ba6b0acd981daf9069830b88d48e67f05fa",
+      "bytes": 7560
+    },
+    {
+      "path": "packages/pa/test_pa_asup_network.py",
+      "sha256": "4e9414d85b2c6e987889624c8a1aed8fc438e82d84a2f36964bff0dbf7e8bbb5",
+      "bytes": 3532
     },
     {
       "path": "packages/pa/test_pa_distribution.py",
@@ -323,8 +333,8 @@
     },
     {
       "path": "packages/pa/test_performance_compact.py",
-      "sha256": "372632c92ca01ec76cfebbb30d314632e32147047cce31fffc4a878e96625475",
-      "bytes": 8865
+      "sha256": "302c4b3e5d2468d97a9932315c9904ed09835484cca1000c0b3c0d771d5e7706",
+      "bytes": 13580
     },
     {
       "path": "packages/pa/test_performance_report.py",
@@ -363,8 +373,8 @@
     },
     {
       "path": "packages/pa/verify_performance_compact.py",
-      "sha256": "c256a4e98ce808073c44bf5ebbe1b837865abfea8ab0bb5f123a147f087a4525",
-      "bytes": 10100
+      "sha256": "c131ffa65377b305d85e85cf46827ee3d6672ec9fe9f45b687a7e35aba9ec886",
+      "bytes": 10883
     },
     {
       "path": "packages/pa/verify_performance_v2.py",
@@ -378,7 +388,7 @@
     },
     {
       "path": "packages/pa/VERSION",
-      "sha256": "80447316529fc62014fbaa047fb67c51ac30e32830cda370405349d8d66d196c",
+      "sha256": "1f930dd1f133c1f97a94fe3acb8db34372cf4c01ffdb2b3ff4ca72f9494121e9",
       "bytes": 6
     },
     {
@@ -388,8 +398,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "be5b2c8fc0b43ea844432baeede8cd21596f1cff776e6e413d62c160ee7da50b",
-      "bytes": 8516
+      "sha256": "aade14328d59d274be6715c55923835b5aaec6f0aa33aa6d84f699cef1d759c4",
+      "bytes": 8565
     },
     {
       "path": "requirements.in",

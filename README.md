@@ -9,7 +9,7 @@
 | 报告 | 主要用途 | 输入 | 当前状态 |
 |---|---|---|---|
 | **SAM Report** | 配置巡检、容量、固件、Case、网络事件和最佳实践 | 离线 ASUP 日志及本地知识库 | 已提供可下载的分发候选包 |
-| **PA Report** | Node/Aggr/Volume/FlexGroup/端口性能、热点卷、协议和 FabricPool | 离线 Performance Archive，可选 ASUP 端口配置 | [0.1.1 源码安装候选](docs/pa-report.md)，独立九页报告 |
+| **PA Report** | Node/Aggr/Volume/FlexGroup/端口性能、热点卷、协议和 FabricPool | 离线 Performance Archive，可选 ASUP 端口配置 | [0.2.0 源码安装候选](docs/pa-report.md)，独立九页报告，区分业务/cluster/intercluster 端口用途 |
 | **Trend Report** | 目标为历史容量、配置、性能趋势 | 历史 SAM 与 PA 结果 | 已有容量等趋势源码；统一三类趋势 Skill/包尚未交付 |
 
 详细规划见 [多报告接入规范](docs/report-catalog.md)。PA 的完整源码位于 [packages/pa](packages/pa)，下载与安装见 [PA 中文指南](docs/pa-report.md)，示例见 [PA 虚构样板](examples/PA报告样板.md)。下面 SAM 功能和安装说明仍只针对 SAM，不会安装 PA 或 Trend。

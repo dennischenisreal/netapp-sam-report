@@ -54,3 +54,33 @@ ZIP or a stable Release. New-machine and cross-Agent installation, remote CI,
 AIQUM calibration and the unified Trend Skill remain unverified/unimplemented.
 Remote synchronization evidence is the actual pushed feature commit, not a
 claim inferred from these local tests.
+
+## Port Purpose Mapping Validation (2026-11-27)
+
+PA 0.2.0 separates current LIF-backed purpose from the deprecated physical Role.
+Numerical performance metrics and the nine-sheet layout remain unchanged.
+
+- 100 tests passed in the canonical project, including synthetic identity,
+  stale-cache, IFGRP alias, dedicated/shared purpose, VLAN and current-placement
+  regressions. Source privacy, Skill structure and installed `--doctor` passed.
+- A new private two-node smoke run passed the approved driver, saved-cell,
+  native-duration and formula checks. Its previews show dedicated intercluster
+  physical members. No smoke workbook was published.
+- The requested larger Site report matched ASUP for all 38 PA nodes. Independent
+  inspection found 31 intercluster LIF IPs, matching the existing SAM interface
+  inventory, and all 53 backing physical PA ports were present, including six
+  shared business/intercluster ports.
+- The requested workbook passed 90,376 saved model-cell checks, 20,478 unchanged
+  baseline metric checks and 4,198 native-duration checks, with no formula errors.
+  Comparison with the previous compact model found 77,995 existing fields
+  outside the intentionally changed purpose/source fields unchanged.
+- Shared and dedicated purpose previews, raw-Role/source detail and the main
+  Network Port view were inspected. Delivery used a new versioned filename,
+  preserving the earlier formal workbook.
+
+These runs explicitly reused trusted local PA baseline/native-interval and
+focused-counter caches after source SHA/identity verification, while parsing
+the ASUP network mapping afresh. They are not independent PA re-decoding or
+vendor calibration. Configuration snapshots do not identify historical LIF
+traffic; shared-port PA throughput cannot be separated by purpose.
+Customer evidence and exact run identities remain private.

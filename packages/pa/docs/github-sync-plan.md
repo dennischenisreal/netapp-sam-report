@@ -10,7 +10,7 @@
 | Skill | 范围 | 版本与安装 |
 | --- | --- | --- |
 | SAM Report | ASUP 配置、容量、巡检 | 保持现有 0.5.0 与原分发候选包 |
-| PA Report | 离线 PA 性能 | 独立 VERSION、测试、源码安装 ZIP；本次为 0.1.1 |
+| PA Report | 离线 PA 性能 | 独立 VERSION、测试、源码安装 ZIP；当前为 0.2.0 |
 | Trend Report | 历史容量、配置、性能比较 | 后续独立整合，尚未交付统一三类趋势包 |
 
 共仓库便于统一下载入口、需求记录和跨报告兼容性；分目录、分版本、分包
@@ -41,7 +41,7 @@
 python -B -m tools.distribution stage-suite --suite "D:/Source/ReportSkills" --expected-base "<full-reviewed-commit>"
 python -B -m tools.distribution stage-suite --suite "D:/Source/ReportSkills" --expected-base "<full-reviewed-commit>" --apply
 python -B -m tools.distribution build --output ".local/package-unique"
-python -B -m tools.distribution verify ".local/package-unique/netapp-pa-report-0.1.1-source.zip"
+python -B -m tools.distribution verify ".local/package-unique/netapp-pa-report-0.2.0-source.zip"
 ```
 
 导出工具不执行远端写入，不删除旧文件。目标有独立修改、未登记文件、

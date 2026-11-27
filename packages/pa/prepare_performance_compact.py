@@ -379,6 +379,9 @@ def prepare(baseline, output, counters, network_file, config):
                                       "rx_high", "tx_high", "rx_longest", "tx_longest")})
         role = network["ports"].get(r["node"], {}).get(r["port"], {})
         r.update({k: role.get(k, "未知") for k in ("role", "ifgrp", "port_type", "role_source")})
+        r["role_raw"] = role.get("role_raw") or "未知"
+        r["purpose_roles"] = role.get("purpose_roles", [])
+        r["lif_evidence"] = role.get("lif_evidence", [])
         r["asup_date"] = role.get("asup_date")
         if not role:
             source = next((s for s in network["sources"] if s["node"] == r["node"]), None)
@@ -390,7 +393,7 @@ def prepare(baseline, output, counters, network_file, config):
             r["error_" + counter] = error["delta"] if error else None
         observed = [v for (node, port, _), v in error_lookup.items() if node == r["node"] and port == r["port"]]
         r["error_minutes"] = min((v["minutes"] for v in observed), default=None)
-    append_fields(sheets["Network Port"], [("role", "端口用途（Role）", 32)], "date")
+    append_fields(sheets["Network Port"], [("role", "端口用途", 52)], "date")
     append_fields(sheets["Network Port"], [
         ("rx_peak", "原生 RX 峰值 MiB/s", 26, N), ("tx_peak", "原生 TX 峰值 MiB/s", 26, N),
         ("rx_util_peak", "RX 峰值利用率", 21, P), ("tx_util_peak", "TX 峰值利用率", 21, P),
@@ -399,19 +402,20 @@ def prepare(baseline, output, counters, network_file, config):
         ("tx_longest", "TX 高利用最长 分钟", 27, N),
         *[("error_" + c, c + "\n窗口增量", max(23, len(c)), INT) for c in names],
         ("error_minutes", "错误计数有效\n分钟(最短)", 25, N),
-        ("ifgrp", "所属 IFGRP", 20), ("port_type", "ASUP 端口类型", 23),
+        ("ifgrp", "所属 IFGRP", 20), ("role_raw", "ASUP 物理 Role", 24),
+        ("port_type", "ASUP 端口类型", 23),
         ("asup_date", "用途配置时点 +08:00", 27, "yyyy-mm-dd hh:mm"),
         ("role_source", "用途来源（非PA同窗）", 77),
     ], "coverage")
-    unknown = sum(r["role"] == "未知" for r in sheets["Network Port"]["rows"])
+    unknown = sum(not r["purpose_roles"] for r in sheets["Network Port"]["rows"])
     sheets["Network Port"]["note"] = (
-        f"全程down不展示；{unknown}个PA接口角色未知。端口Role直接取ASUP network-ports，与SAM同源，不拼接LIF协议。"
-        "RX/TX各自>70%为高利用；ASUP配置时点另列，非PA历史流量归因。端口延迟无counter，保持N/A。")
+        f"全程down不展示；{unknown}个PA接口用途未确认。用途按当前LIF角色/服务经IFGRP成员映射，物理Role另列；"
+        "共用口流量不按用途拆分。RX/TX各自>70%为高利用；ASUP时点另列，非PA历史流量归因。端口延迟N/A。")
     hotspots = site_hotspots(generated["热点卷分析"])
     model["analysis_sheets"] = [hotspots, protocol_sheet(analysis), fabricpool_sheet(analysis)]
     model["compact"] = True
     model["model_version"] = "performance-report-v6-refined"
-    model["metric_version"] = "pa-window-v2.2-refined"
+    model["metric_version"] = "pa-window-v2.3-port-purpose"
     model["analysis_config"] = {k: v for k, v in config.items() if k != "port_roles"}
     model["output_filename"] = original["output_filename"]
     model["info"] = [
@@ -425,7 +429,7 @@ def prepare(baseline, output, counters, network_file, config):
         ["阈值", "默认CPU>70%、延迟>10ms、单向端口利用率>70%。严格大于，等于阈值不计入高负载/高延迟时长；高延迟及最长连续时长已重新计算。"],
         ["Aggr 数据源", "IO读写字节与总延迟采用原生小时级kernel/asup，IOPS采用kernel/opm。短窗口若无完整小时差分，相关指标保持N/A，不用卷数据替代。"],
         ["网络端口", "RX+TX全双工合计可超过100%；单向峰值/高利用时长分开看。没有已验证端口延迟counter。错误类型可能重叠，不计算混合总错数。"],
-        ["端口用途", "按节点名、序列号和集群UUID匹配最近ASUP；主列直接取network-ports.xml的role，与SAM Network Port的Role同源。data不是NFS或CIFS协议名称，不继承LIF服务作为端口角色；未知不猜测。各行列出真实配置日期，不宣称与PA同窗。"],
+        ["端口用途", "按节点名、序列号和集群UUID匹配最近ASUP；主列按network-interface.xml的当前LIF角色/服务，结合ifgrps.xml成员回溯物理口，区分data业务、cluster集群互联及intercluster集群间通信。显式VLAN记录可经基接口回溯；不按LIF名称/IP猜用途，不使用迁移前home位置。原network-ports.xml物理Role另列，data物理口可承载intercluster；共用口明确标注，但PA流量不按LIF或业务类别拆分。配置时点另列，非PA同窗流量归因。"],
         ["FlexGroup", "Volume仅展示大卷；FlexGroup成员明细不再进入逻辑卷热点总榜。成员数量为实际收到数量，不做SAM清单核对。大卷与节点表在FlexGroup成员明细下方。"],
         ["子卷相对热点", "只比较同一大卷的已收成员及共同5分钟格，至少2成员、30分钟。窗口平均IOPS或吞吐>其他成员均值2倍标记热点；期间任一5分钟格超2倍另记热点分钟/最长连续分钟。IOPS维度需大卷>=1000 IOPS，吞吐维度需>=10 MiB/s，分别判断。其他成员均为0时倍数N/A，但可标唯一负载热点；低总负载不判热点。"],
         ["热点边界", "热点标记表示采样窗口相对访问集中，不是成员故障。覆盖不足时只评价共同有效片段，不宣称全请求窗口持续偏斜；未提供的成员不参与判断。"],

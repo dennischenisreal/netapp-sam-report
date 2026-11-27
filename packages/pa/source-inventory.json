@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "report": "pa",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "kind": "source-install-candidate",
   "files": [
     {
@@ -26,23 +26,23 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 1164,
-      "sha256": "3c4c68cd4c67a0403f674bd6762a226c56f734153827cca358b47238ac78ac49"
+      "bytes": 1877,
+      "sha256": "233d71e30f44860be7d354cb28f9140b996cf51d36c422879b6af3e14606bd4a"
     },
     {
       "path": "README.md",
-      "bytes": 4340,
-      "sha256": "f635c5aaeb793e8e84bcdea797e3cd30c766e00e5f5cbe21013089f852bef22e"
+      "bytes": 4656,
+      "sha256": "b129b651f65a3a22ae7ffe6437d8a01f1d1241f34e1a93d128fef6eb7762b6b2"
     },
     {
       "path": "VERSION",
       "bytes": 6,
-      "sha256": "80447316529fc62014fbaa047fb67c51ac30e32830cda370405349d8d66d196c"
+      "sha256": "1f930dd1f133c1f97a94fe3acb8db34372cf4c01ffdb2b3ff4ca72f9494121e9"
     },
     {
       "path": "build_performance_workbook.mjs",
-      "bytes": 21050,
-      "sha256": "46407f3af9bbfabaa14a2dc940f410f0343ddd1ea46e1152780a9b8ba3552206"
+      "bytes": 21466,
+      "sha256": "8498db86e0fef0329a1a8b1c366a12892474ea15734144220d74bc237bcd8bbe"
     },
     {
       "path": "config/project.example.json",
@@ -52,7 +52,7 @@
     {
       "path": "docs/github-sync-plan.md",
       "bytes": 4403,
-      "sha256": "b2093d2eff65bde1bdabf117e6e58aa3c60ce64aed1bc1ae6a29ea241e9b494b"
+      "sha256": "3f633071e99058ecf67a4bbd7bcf30251e6489207afba4c4d043615863c6b71c"
     },
     {
       "path": "docs/trend-data-contract-plan.md",
@@ -61,13 +61,13 @@
     },
     {
       "path": "docs/validation.md",
-      "bytes": 3325,
-      "sha256": "ecc033e95a6f5e41bea8b8c396f78c8609ab9aff71a4077ae2ef456e4310a536"
+      "bytes": 5183,
+      "sha256": "a145e92724d021f0fbb1372ce7ed44c44165b359a2ef9a267a1ee8eb03050bdd"
     },
     {
       "path": "pa_asup_network.py",
-      "bytes": 6472,
-      "sha256": "a524f8bf4a67f2c811a2e0c66eac556c45cdba3daced399b69a1f3985359f0b2"
+      "bytes": 9699,
+      "sha256": "b04d1b53cab7f16099f6bf8fedced0df7d647037bcc379fb3f67a60ce62cee91"
     },
     {
       "path": "pa_capabilities.py",
@@ -106,8 +106,8 @@
     },
     {
       "path": "prepare_performance_compact.py",
-      "bytes": 31363,
-      "sha256": "26ffcfb62ff6ade9cefbeab22ccf5c84b20b6cee0e8a8b92bb8eb00aff63c49c"
+      "bytes": 31825,
+      "sha256": "2c02f89771354c491d2e424ca28f75c1081a4be97fc6b1974b91cefb51b89ccb"
     },
     {
       "path": "prepare_performance_report.py",
@@ -142,7 +142,7 @@
     {
       "path": "skills/netapp-pa-report/SKILL.md",
       "bytes": 4031,
-      "sha256": "3eddcbc362c2a7d4328b7bef052dfb5d62ba6043a653beae5ba9586d957e6e30"
+      "sha256": "c2e110115784e9c7fcb2178e2f3452322c690b44fe8b02a43f30b4ff72836565"
     },
     {
       "path": "skills/netapp-pa-report/agents/openai.yaml",
@@ -156,13 +156,18 @@
     },
     {
       "path": "skills/netapp-pa-report/references/report-contract.md",
-      "bytes": 5475,
-      "sha256": "cfc8915933aff3d04376c2fd51e1b972b90ae104c4e7cdaf848f6cf8be434872"
+      "bytes": 6618,
+      "sha256": "dfc37b06fcc33ed860f3fe83516d26a96b75b368feb712b170d448f62dd24ebe"
     },
     {
       "path": "skills/netapp-pa-report/scripts/run.py",
       "bytes": 873,
       "sha256": "57de3dc4efc26b7278a230351f4c6ca6244567af4c4429568766feb231ce69f5"
+    },
+    {
+      "path": "test_pa_asup_network.py",
+      "bytes": 3532,
+      "sha256": "4e9414d85b2c6e987889624c8a1aed8fc438e82d84a2f36964bff0dbf7e8bbb5"
     },
     {
       "path": "test_pa_distribution.py",
@@ -181,8 +186,8 @@
     },
     {
       "path": "test_performance_compact.py",
-      "bytes": 8865,
-      "sha256": "372632c92ca01ec76cfebbb30d314632e32147047cce31fffc4a878e96625475"
+      "bytes": 13580,
+      "sha256": "302c4b3e5d2468d97a9932315c9904ed09835484cca1000c0b3c0d771d5e7706"
     },
     {
       "path": "test_performance_report.py",
@@ -221,8 +226,8 @@
     },
     {
       "path": "verify_performance_compact.py",
-      "bytes": 10100,
-      "sha256": "c256a4e98ce808073c44bf5ebbe1b837865abfea8ab0bb5f123a147f087a4525"
+      "bytes": 10883,
+      "sha256": "c131ffa65377b305d85e85cf46827ee3d6672ec9fe9f45b687a7e35aba9ec886"
     },
     {
       "path": "verify_performance_v2.py",

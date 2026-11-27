@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.2.0 - 2026-11-27
+
+- Separate actual port purpose from ASUP's deprecated physical port Role.
+  Trace current LIF roles/services through explicit IFGRP members and recorded
+  VLAN bases so intercluster LIFs remain visible on their backing PA ports.
+- Mark shared business/intercluster ports without splitting or duplicating PA
+  traffic. Keep raw physical Role, snapshot identity/date and private LIF evidence.
+- Version the ASUP cache and port-purpose metric contract; preserve numerical
+  performance metrics, nine sheets and all-observed-down filtering.
+- Add synthetic tests for dedicated/shared ports, VLANs, current placement,
+  node isolation, missing configuration and contradictory IFGRP membership.
+
 ## 0.1.1 - 2026-11-24
 
 - Selected the existing Report Skills repository, with independent PA ownership,

@@ -1,14 +1,14 @@
 # NetApp PA Report
 
 本地离线 Performance Archive 性能报告与可维护的 Codex Skill。
-当前源码安装候选为 **0.1.1**，保留已经审阅的九个 Sheet 和指标口径。
+当前源码安装候选为 **0.2.0**，保留九个 Sheet；端口用途区分实际 LIF 用途与物理 Role。
 代码与 Skill 使用同一份源码；不依赖在线解析服务，不涉及采集工具改造。
 
 ## 日常使用
 
 统一仓库为 `dennischenisreal/netapp-sam-report`，PA 位于 `packages/pa`。
 可以克隆完整仓库后进入该目录，或者下载独立的
-`netapp-pa-report-0.1.1-source.zip`、校验 SHA256 后解压。
+`netapp-pa-report-0.2.0-source.zip`、校验 SHA256 后解压。
 ZIP 是完整源码安装包，不是上传单个 SKILL.md 的通用导入包。
 SAM 保持独立安装包；统一 Trend 包尚待后续开发。
 
@@ -23,7 +23,7 @@ python "$env:USERPROFILE/.codex/skills/netapp-pa-report/scripts/run.py" --source
 以后可以直接对 Codex 说：“使用 netapp-pa-report，生成这个目录本批 PA report。”
 新会话会发现安装的 Skill；当前会话也可以直接读取其 SKILL.md。
 每个 Site、每批采样分别运行，`--label` 必须唯一。
-ASUP 只补充端口 Role，省略时显示未知，不影响 PA 性能计算。
+ASUP 补充当前 LIF 用途、IFGRP 成员与物理 Role，省略时显示未知，不影响 PA 性能计算。
 
 本机正式输出目录保存在 **不入库** 的 `config/project.local.json` 的
 `reports_root` 中。其他机器需按 `config/project.example.json` 建立本地配置，
@@ -45,6 +45,9 @@ Node、Aggr、Volume、FlexGroup、Network Port、热点卷分析、
 默认严格 CPU >70%、卷延迟 >10ms、单向端口利用率 >70%。
 僵尸块折算 TiB 使用 `blocks*4096/1024^4`，显示两位小数。
 完整定义与限制见 [报告口径](skills/netapp-pa-report/references/report-contract.md)。
+Network Port 用途按当前 LIF 角色/服务经 IFGRP 回溯物理口，
+明确区分业务、cluster 集群互联及 intercluster 集群间通信；原始物理 Role 另列。
+共用口标注共用，但不将物理网卡流量拆成各 LIF 或业务流量。
 
 PA 解析仍属实验解析，SMB/云端延迟尚待 AIQUM 同窗校准。
 端口延迟无已验证 counter，保留 N/A。短采样不代表整月均值。
